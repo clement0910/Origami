@@ -1,0 +1,7 @@
+<%= @user.first_name %>
+<%= cl_image_tag @user.photo.key %>
+<%= simple_form_for @user do |f| %>
+<%= f.input :photo %>
+<%= f.input :job %>
+  <%= f.button :submit %>
+<% end %>
