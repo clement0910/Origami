@@ -24,6 +24,7 @@ module Origami
     #
     RSpotify::authenticate(ENV['CLIENT_ID_SPOTIFY'], ENV['CLIENT_SECRET_SPOTIFY'])
 
+    config.hosts << "origami-clement0910.herokuapp.com"
     config.hosts << /.+.ngrok.io/
   end
 end
