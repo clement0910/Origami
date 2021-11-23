@@ -1,43 +1,58 @@
-<div data-controller="toggle-field-registration">
+<div data-controller="toggle-field-registration" class="form-registration">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <div class="email" data-toggle-field-registration-target="email">
+      <progress id="file" max="100" value="12.5"></progress>
+      <h2>Mon adresse email</h2>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showPassword">coucou</div>
+                  placeholder: 'Email',
+                  label: '',
+                  input_html: { autocomplete: "email", class: 'input-registration'}%>
+      <div data-action="click->toggle-field-registration#showPassword" class="btn btn-color">Continuer</div>
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
+      <progress id="file" max="100" value="25"></progress>
+      <h2>Mon mot de passe</h2>
       <%= f.input :password,
                   required: true,
+                  placeholder: 'Mot de passe',
+                  label: '',
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password",  class: 'input-registration'} %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showName">coucou</div>
+                  placeholder: 'Confirmer mot de passe',
+                  label: '',
+                  input_html: { autocomplete: "new-password", class: 'input-registration' } %>
+      <div data-action="click->toggle-field-registration#showName" class="btn btn-color">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="name">
+      <progress id="file" max="100" value="32.5"></progress>
       <%= f.input  :first_name %>
       <%= f.input  :last_name %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showGender">coucou</div>
+      <div data-action="click->toggle-field-registration#showGender">coucou</div>
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
+      <progress id="file" max="100" value="45"></progress>
       <%= f.input  :gender %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showCity">coucou</div>
+      <div data-action="click->toggle-field-registration#showCity">coucou</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city">
+      <progress id="file" max="100" value="57.5"></progress>
       <%= f.input  :city %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showBirthday">coucou</div>
+      <di data-action="click->toggle-field-registration#showBirthday">coucou</di>
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
+      <progress id="file" max="100" value="70"></progress>
       <%= f.input  :birthday %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showPhoto">coucou</div>
+      <div data-action="click->toggle-field-registration#showPhoto">coucou</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
+      <progress id="file" max="100" value="82.5"></progress>
       <%= f.input  :photo, as: :file %>
       <div class="form-actions">
         <%= f.button :submit, "Sign up" %>
