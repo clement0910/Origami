@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :birthday, :gender, :city, presence: true
   validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "Ce champ n'accepte que les lettres." }
   validates :gender, inclusion: { in: %w[homme femme] }
-  validates :first_name, :last_name, length: { minimum: 2 }
-  validates :photo, attached: true, content_type: [:png, :jpg, :jpeg]
+  validates :first_name, :last_name, length: { minimum: 2, message: "Le champ est trop court." }
+  validates :photo, attached: true, content_type: %i[png jpg jpeg]
   before_save :update_name!
 
   extend FriendlyId

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/user', to: 'users#show'
+  get '/profile', to: 'users#profile'
+  resources :users, only: [:show, :update]
   get '/swiper', to: 'questions#index'
   get '/messages', to: 'room#index'
 
