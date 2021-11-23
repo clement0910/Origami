@@ -8,7 +8,7 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showPassword">coucou</div>
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
       <%= f.input :password,
@@ -18,33 +18,32 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#emailToPassword">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showName">coucou</div>
     </div>
-    <div class="none">
+    <div class="none" data-toggle-field-registration-target="name">
       <%= f.input  :first_name %>
       <%= f.input  :last_name %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showGender">coucou</div>
     </div>
-    <div class="none">
+    <div class="none" data-toggle-field-registration-target="gender">
       <%= f.input  :gender %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showCity">coucou</div>
     </div>
-    <div class="none">
+    <div class="none" data-toggle-field-registration-target="city">
       <%= f.input  :city %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showBirthday">coucou</div>
     </div>
-    <div class="none">
+    <div class="none" data-toggle-field-registration-target="birthday">
       <%= f.input  :birthday %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#showPhoto">coucou</div>
     </div>
-    <div class="none">
+    <div class="none" data-toggle-field-registration-target="photo">
       <%= f.input  :photo, as: :file %>
-      <div style="background: yellow; width: 5px" data-action="click->toggle-field-registration#switchPage">coucou</div>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
     </div>
   </div>
 
-  <div class="form-actions none">
-    <%= f.button :submit, "Sign up" %>
-  </div>
 <% end %>
 </div>
