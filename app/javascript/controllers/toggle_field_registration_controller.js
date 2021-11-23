@@ -3,9 +3,11 @@ import { Controller } from "stimulus";
 export default class extends Controller {
     static targets = ['email', 'password', 'name', 'gender', 'birthday', 'city', 'photo'];
 
-    showPassword() {
-        this.emailTarget.classList.toggle('none');
-        this.passwordTarget.classList.toggle('none')
+    showPassword(event) {
+        if (event.keyCode === 13) {
+            this.emailTarget.classList.toggle('none');
+            this.passwordTarget.classList.toggle('none')
+        }
     }
 
     showName() {
