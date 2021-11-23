@@ -1,0 +1,10 @@
+<div data-controller="edit-profile" data-edit-profile-target="profile">
+  <%= @user.first_name %>
+  <%= cl_image_tag @user.photo.key %>
+  <button data-edit-profile-target="btn" data-action="click->edit-profile#displayForm">Edit</button>
+  <%= simple_form_for @user, url: user_update_avatar_path(@user), method: 'post', html: { class: 'none', data: { edit_profile_target: 'form', action: 'submit->edit-profile#update' }} do |f| %>
+    <%= f.input :photo, input_html: { data: {action: 'change->edit-profile#update'.html_safe} }%>
+    <%= f.button :submit %>
+    </div>
+  <% end %>
+  </div>

@@ -7,11 +7,14 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def update
-    #stimulus js ?
-    @user = User.friendly.find(params[:id])
+  def update_avatar
+    @user = current_user
     @user.update(params_user)
-    redirect_to profile_path
+
+    respond_to do |format|
+      format.html { redirect_to profile_path }
+      format.text { render partial: 'users/profile_avatar', locals: { user: current_user }, formats: [:html] }
+    end
   end
 
   def spotify
