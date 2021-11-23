@@ -34,8 +34,10 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'rspotify'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
 gem 'friendly_id', '~> 5.4.0'
+gem 'active_storage_validations'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
