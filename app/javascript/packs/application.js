@@ -27,9 +27,11 @@ require("channels")
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initServiceWorker } from '../service_workers/application';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+    initServiceWorker();
 });
 
 import "controllers"
