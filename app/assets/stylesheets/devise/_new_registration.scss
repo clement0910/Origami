@@ -1,0 +1,40 @@
+.form-registration {
+  text-align: center;
+  background: #fff;
+  height: 100vh;
+  gap: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+div .input {
+  margin-bottom: 15vh;
+}
+.input-registration {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+  margin: 0 auto;
+}
+.input-registration:focus { outline:none; }
+
+abbr { display:none; }
+
+progress {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width:100vw;
+  border-radius: 0;
+}
+
+progress::-webkit-progress-value {
+  background: rgb(255,175,33);
+  background: linear-gradient(43deg, rgba(255,175,33,1) 0%, rgba(255,111,0,1) 100%);
+}
+progress::-webkit-progress-bar {
+  background: #eee;
+}
