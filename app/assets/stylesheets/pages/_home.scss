@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.home-container {
+  text-align: center;
+  background: rgb(255,218,51);
+  background: linear-gradient(43deg, rgba(255,218,51,1) 0%, rgba(255,149,0,1) 100%);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  height: 100vh;
+  gap: 4vh;
+}
+
+.logo {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.btn-container {
+  margin-top: 20px;
+}

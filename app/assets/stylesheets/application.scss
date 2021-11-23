@@ -5,3 +5,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@font-face {
+  font-family: 'Quicksand Regular';
+  src: url('../fonts/Quicksand-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand Regular', sans-serif;
+}

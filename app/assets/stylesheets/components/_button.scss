@@ -1,0 +1,24 @@
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  padding: 14px 24px;
+  border-radius: 100em;
+  font-size: 22px;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.btn-white {
+  background-color: white;
+}
+
+.btn-home {
+  margin-top: 20px;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
