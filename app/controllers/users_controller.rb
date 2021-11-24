@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    @age = Date.today.year - current_user.birthday.year
+    @age -= 1 if Date.today < current_user.birthday + @age.years
   end
 
   def update_avatar

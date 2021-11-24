@@ -7,37 +7,34 @@
   <div class="img__profile">
     <img src="<%= cl_image_path current_user.photo.key %>" alt="profile">
     <div class="name"><%= "#{current_user.first_name} #{current_user.last_name}" %></div>
-    <div class="id"><%= current_user.gender %></div>
+    <div class="id"><%= @age %> ans</div>
+    <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, velit.</div>
   </div>
 
   <div class="item">
     <%= image_tag("Profile.png", :alt => "profile") %>
-    <span>My Profile</span>
-    <div class="icon">
-      <%= image_tag("chevron-right.png", :alt => "chevron") %>
-    </div>
+    <span>Modifier image de profil</span>
   </div>
-  <div class="item">
-    <img src="assets/img/icon/Wallet.png" alt="Wallet.png">
-    <span>Saldo</span>
-    <div class="icon">
-      <img src="assets/img/icon/chevron-right.png" alt="more">
-    </div>
-  </div>
-  <div class="item">
-    <img src="assets/img/icon/map-pin.png" alt="map-pin.png">
-    <span>Address</span>
-    <div class="icon">
-      <img src="assets/img/icon/chevron-right.png" alt="more">
-    </div>
-  </div>
+<!--  <div class="item">-->
+<!--    <img src="assets/img/icon/Wallet.png" alt="Wallet.png">-->
+<!--    <span>Saldo</span>-->
+<!--    <div class="icon">-->
+<!--      <img src="assets/img/icon/chevron-right.png" alt="more">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="item">-->
+<!--    <img src="assets/img/icon/map-pin.png" alt="map-pin.png">-->
+<!--    <span>Address</span>-->
+<!--    <div class="icon">-->
+<!--      <img src="assets/img/icon/chevron-right.png" alt="more">-->
+<!--    </div>-->
+<!--  </div>-->
+  <%= link_to '/auth/spotify', style: 'text-decoration: none;' do %>
   <div class="item">
     <img src="assets/img/icon/Notification.png" alt="Notification.png">
-    <span>Notification</span>
-    <div class="icon">
-      <img src="assets/img/icon/chevron-right.png" alt="more">
-    </div>
+    <span>Spotify</span>
   </div>
+  <% end %>
   <div class="item">
     <img src="assets/img/icon/Setting.png" alt="Setting.png">
     <span>Settings</span>
@@ -45,12 +42,12 @@
       <img src="assets/img/icon/chevron-right.png" alt="more">
     </div>
   </div>
+  <%= link_to destroy_user_session_path, method: 'delete', style: 'text-decoration: none;' do %>
   <div class="item__logout">
     <%= image_tag("log-out.png", :alt => "logout") %>
-    <span>Logout</span>
-    <div class="icon">
-      <img src="chevron-right.png" alt="chevron">
+    <span>Se déconnecter</span>
     </div>
+    <% end %>
   </div>
 </div>
 </div>
