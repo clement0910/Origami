@@ -6,6 +6,7 @@
 @import "components/index";
 @import "pages/index";
 @import "devise/index";
+@import "components/profile";
 @import "chatroom/index";
 
 @font-face {
@@ -174,6 +175,10 @@ img {
   right:72px;
   border-radius: 4px;
   transform:rotate(24deg);
+}
+
+.big-container-center {
+  text-align: center;
 }
 
 .profile--nexting::after {
