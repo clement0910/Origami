@@ -1,16 +1,19 @@
-  <main>
-    <img src="images/logo.png">
-    <div class="profiles">
-      <div class="profile">
-        <div class="profile__image" style="background-image: url('https://source.unsplash.com/random');"></div>
-        <div class="profile__infos">
-        <%= @themes.each do |theme| %>
-          <%= theme.questions.each do |question| %>
-          <div class="profile__name">Catégorie : <%= theme.name %></div>
-          <div class="profile__description"> <%= question.content %></div>
+<main>
+<div class="swipe-infos">
+  <p>Swipe vers la droite ou la gauche !</p>
+</div>
+<% @themes.each do |theme| %>
+  <% theme.questions.each do |question| %>
+      <div class="profiles">
+        <div class="profile">
+          <div class="profile__image" style="background-image: url('https://source.unsplash.com/random');">
+              <div class="profile__infos">
+                <div class="profile__name">Catégorie : <%= theme.name %></div>
+              <div class="profile__description"> <%= question.content %></div>
+          </div>
         </div>
       </div>
-<% end %>
+  <% end %>
 <% end %>
 
     <div class="bottombar">
@@ -21,6 +24,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/2258px-Love_Heart_SVG.svg.png">
       </div>
     </div>
-  </main>
+</main>
+
 <script src='js/hammer.min.js'></script>
 <script src='js/main.js'></script>
