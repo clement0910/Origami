@@ -6,7 +6,7 @@
 @import "components/index";
 @import "pages/index";
 @import "devise/index";
-
+@import "components/profile";
 
 @font-face {
   font-family: 'Quicksand Regular';
@@ -65,6 +65,6 @@ body {
   color: black;
 }
 
-.big-container {
+.big-container-center {
   text-align: center;
 }
