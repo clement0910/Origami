@@ -1,19 +1,26 @@
-<div class="big-container">
-  <div class="small-container">
-    <h5> Swipe vers la droite </h5>
-    <h5> Swipe vers la gauche </h5>
-  </div>
-
-  <div class="tinder">
-    <div class="tinder--cards">
+  <main>
+    <img src="images/logo.png">
+    <div class="profiles">
+      <div class="profile">
+        <div class="profile__image" style="background-image: url('https://source.unsplash.com/random');"></div>
+        <div class="profile__infos">
         <%= @themes.each do |theme| %>
           <%= theme.questions.each do |question| %>
-            <div class="tinder--card">
-            <img src="https://placeimg.com/240/300/people">
-            <h2>Catégorie : <%= theme.name %> </h2>
-            <p> <%= question.content %> </p>
-            </div>
+          <div class="profile__name">Catégorie : <%= theme.name %></div>
+          <div class="profile__description"> <%= question.content %></div>
+        </div>
+      </div>
+<% end %>
+<% end %>
+
+    <div class="bottombar">
+      <div class="bottombar__button">
+        <img src="https://www.svgrepo.com/show/124149/cross-sign.svg">
+      </div>
+      <div class="bottombar__button2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/2258px-Love_Heart_SVG.svg.png">
+      </div>
     </div>
-  </div>
-<% end %>
-<% end %>
+  </main>
+<script src='js/hammer.min.js'></script>
+<script src='js/main.js'></script>
