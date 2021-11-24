@@ -8,10 +8,11 @@ export default class extends Controller {
             this.emailTarget.classList.toggle('none');
             this.passwordTarget.classList.toggle('none')
         }
-        else if ( event.target.id === 'next' ) {
+        else if ( event.target.id === 'next' || event.target.id === 'previous' ) {
             this.emailTarget.classList.toggle('none');
             this.passwordTarget.classList.toggle('none');
         }
+        console.log(event.target.id);
     }
 
     showName(event) {

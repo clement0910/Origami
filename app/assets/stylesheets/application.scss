@@ -12,6 +12,11 @@
   src: font-url('Quicksand-Regular.ttf')  format('truetype');
 }
 
+@font-face {
+  font-family: 'Quicksand Bold';
+  src: font-url('Quicksand-Bold.ttf')  format('truetype');
+}
+
 body {
   margin: 0;
   font-family: 'Quicksand Regular', sans-serif;
