@@ -1,5 +1,5 @@
 <div class="menu">
-    <%= link_to profile_path, class: 'link active' do %>
+    <%= link_to profile_path, class: "link #{'active' if current_page?(profile_path)}" do %>
 		<span class="link-icon">
 			<!-- icon -->
 			<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
@@ -11,7 +11,7 @@
 		</span>
     <span class="link-title">Profile</span>
   <% end %>
-  <a href="#" class="link">
+  <%= link_to swiper_path, class: "link #{'active' if current_page?(swiper_path)}" do %>
 		<span class="link-icon">
 			<!-- icon -->
 			<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
@@ -21,8 +21,8 @@
       <!-- /icon -->
 		</span>
     <span class="link-title">Home</span>
-  </a>
-  <a href="#" class="link">
+    <% end %>
+    <%= link_to chatrooms_path, class: 'link'do %>
 		<span class="link-icon">
 			<!-- icon -->
 			<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
@@ -34,6 +34,5 @@
       <!-- /icon -->
 		</span>
     <span class="link-title">Chat</span>
-  </a>
-
+    <% end %>
 </div>
