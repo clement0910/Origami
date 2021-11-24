@@ -1,11 +1,79 @@
-<h1>#<%= @chatroom.name %></h1>
-<div id="messages" data-room-id="<%= @chatroom.id %>">
+<!--<h1>#<%#= @chatroom.name %></h1>-->
+<!--<div id="messages" data-room-id="<%#= @chatroom.id %>">-->
 
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
+  <%# @chatroom.messages.each do |message| %>
+    <%#= render 'messages/message', message: message %>
+  <%# end %>
+
+<!--</div>-->
+
+
+
+    <%# @chatroom.messages.each do |message| %>
+    <%#= render 'messages/message', message: message %>
+    <%# end %>
+<!--  </div>-->
+<!--  <div class="text-bar">-->
+    <%#= form_for [ @chatroom, @message ], html: {class: 'text-bar__field'}, id: 'form-message', remote: true do |f| %>
+      <%#= f.text_field :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "input-send" %>
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->
+
+<div class="chat-global">
+
+  <div class="nav-top">
+    <div class="location">
+      <i class="fas fa-chevron-left"></i>
+      <p>Back</p>
+    </div>
+
+    <div class="utilisateur">
+      <p><%= @chatroom.name %></p>
+    </div>
+
+    <div class="logos-call">
+      <img src="">
+      <img src="">
+    </div>
+  </div>
+
+  <div class="conversation">
+    <% @chatroom.messages.each do |message| %>
+      <% if message.user == current_user %>
+          <%= render 'messages/my_message', message: message %>
+      <% else %>
+         <%= render 'messages/message', message: message %>
+      <% end %>
+    <% end %>
+<!--    <div class="talk left">-->
+<!--      <img src="ressources/avatar2.jpg">-->
+<!--      <p>Lorem ipsum dolor sit amet.</p>-->
+<!--    </div>-->
+<!--    <div class="talk right">-->
+<!--      <p>Lorem ipsum dolor sit amet.</p>-->
+<!--      <img src="ressources/avatar1.jpg">-->
+<!--    </div>-->
+<!--    <div class="talk left">-->
+<!--      <img src="ressources/avatar2.jpg">-->
+<!--      <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>-->
+<!--    </div>-->
+<!--    <div class="talk right">-->
+<!--      <p>Lorem ipsum dolor sit amet.</p>-->
+<!--      <img src="ressources/avatar1.jpg">-->
+<!--    </div>-->
+  </div>
+  <%= form_for [ @chatroom, @message ], html: {class: 'chat-form'}, id: 'form-message', remote: true do |f| %>
+
+    <div class="container-inputs-stuffs">
+      <div class="group-inp">
+<!--        <textarea placeholder="Enter your message here" minlength="1" maxlength="1500"></textarea>-->
+        <%= f.text_field :content, label: false, placeholder: "Enter your message here"%>
+        <i class="far fa-grin-beam"></i>
+      </div>
+      <button class="submit-msg-btn">
+        <i class="far fa-paper-plane"></i>
+      </button>
+    </div>
   <% end %>
-
 </div>
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
