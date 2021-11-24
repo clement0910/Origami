@@ -23,7 +23,7 @@ body {
   margin: 0;
   font-family: 'Quicksand Regular', sans-serif;
   background-color: #FF6F00;
-
+  height: max-content;
 }
 
 * {
@@ -38,23 +38,35 @@ main {
   max-width: 90%;
 }
 
+.swipe-infos {
+  font-weight: 800;
+  margin-top: 2em;
+  color: white;
+  margin-left: 5em;
+  width: 100%;
+}
+
 img {
   max-width: 100%;
 }
 
 .profiles {
-  width:100%;
-  position: relative;
+  margin: 0 auto;
+  width:300px;
+  display: flex;
+  justify-content: center;
   height:450px;
+  flex-grow: 1;
+  z-index: 1;
 }
 
 .profile {
-  margin-top: 5em;
-  margin-left: 3.8em;
+  margin-top: 6em;
+  margin-left: 1.4em;
   position: absolute;
-  left:0px;
-  top:0px;
-  width:100%;
+  left: 0px;
+  top: 0px;
+  width: 90%;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -69,8 +81,9 @@ img {
 }
 
 .profiles::before {
-  content:'Plus rien à matcher...';
-  color:var(--dark-grey);
+  margin-left: 7em;
+  text-align: center;
+  color:white;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -86,6 +99,7 @@ img {
 
 .profile__infos {
   padding:12px;
+  padding-bottom: 12px;
   position:absolute;
   bottom:0px;
   background:linear-gradient(0deg, black, transparent);
@@ -105,16 +119,16 @@ img {
 
 .profile__description {
   color:white;
-  font-size:13px;
+  font-size:20px;
 }
 
 
 .bottombar {
-  margin-top:24px;
-  display:flex;
+  margin-left: 7em;
+  margin-top: 42em;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  gap:24px;
+  gap: 2em;
 }
 
 .bottombar__button {
@@ -133,12 +147,11 @@ img {
 }
 
 .bottombar__button2 {
-  margin-top: 0.1em;
   width: 64px;
   height: 64px;
   border-radius:100%;
   background:white;
-  padding:16px;
+  padding: 16px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition:.4s;
 }
@@ -163,16 +176,16 @@ img {
 }
 
 .profile--matching::after, .profile--nexting::after {
-  content:'MATCH';
+  content:'LIKE';
   font-weight: 900;
-  font-size:28px;
+  font-size:40px;
   padding:8px 12px;
   border:solid 2px var(--green);
   color:white;
   background:var(--black-transparent);
   position:absolute;
   top:24px;
-  right:72px;
+  right:54px;
   border-radius: 4px;
   transform:rotate(24deg);
 }
@@ -182,7 +195,7 @@ img {
 }
 
 .profile--nexting::after {
-  content:'LIKE';
+  content:'DISLIKE';
   border:solid 2px var(--red);
-  color:var(--red);
+  color:white;
 }
