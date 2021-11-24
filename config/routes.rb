@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     patch :update_job
   end
 
-  get '/messages', to: 'room#index'
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
   get '/auth/spotify/callback', to: 'users#spotify'
 
