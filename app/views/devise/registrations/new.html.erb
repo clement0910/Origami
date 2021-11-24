@@ -5,6 +5,9 @@
   <div class="form-inputs">
     <div class="email" data-toggle-field-registration-target="email">
       <progress id="file" max="100" value="12.5"></progress>
+      <%= link_to root_path  do %>
+        <i class="fas fa-chevron-left arrow-left"></i>
+      <% end %>
       <h2>Mon adresse email</h2>
       <%= f.input :email,
                   required: true,
@@ -16,6 +19,7 @@
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
       <progress id="file" max="100" value="25"></progress>
+        <i data-action="click->toggle-field-registration#showPassword" class="fas fa-chevron-left arrow-left" id="next"></i>
       <h2>Mon mot de passe</h2>
       <%= f.input :password,
                   required: true,
@@ -32,6 +36,7 @@
     </div>
     <div class="none" data-toggle-field-registration-target="name">
       <progress id="file" max="100" value="37.5"></progress>
+      <i data-action="click->toggle-field-registration#showName" class="fas fa-chevron-left arrow-left" id="next"></i>
       <%= f.input  :first_name,
                    placeholder: 'Prénom',
                    label: '',
@@ -44,6 +49,7 @@
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
       <progress id="file" max="100" value="50"></progress>
+      <i data-action="click->toggle-field-registration#showGender" class="fas fa-chevron-left arrow-left" id="next"></i>
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
@@ -52,6 +58,7 @@
     </div>
     <div class="none" data-toggle-field-registration-target="city">
       <progress id="file" max="100" value="62.5"></progress>
+      <i data-action="click->toggle-field-registration#showCity" class="fas fa-chevron-left arrow-left" id="next"></i>
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
@@ -60,6 +67,7 @@
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
       <progress id="file" max="100" value="75"></progress>
+      <i data-action="click->toggle-field-registration#showBirthday" class="fas fa-chevron-left arrow-left" id="next"></i>
       <%= f.input  :birthday,
                    placeholder: 'Anniversaire',
                    label: '',
@@ -68,6 +76,7 @@
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
       <progress id="file" max="100" value="87.5"></progress>
+      <i data-action="click->toggle-field-registration#showPhoto" class="fas fa-chevron-left arrow-left" id="next"></i>
       <%= f.input  :photo, as: :file %>
       <div class="form-actions">
         <%= f.button :submit, "Terminer", class: 'btn btn-color', disabled: true,  id: 'submit', data: { :toggle_field_registration_target => "submit" }%>
