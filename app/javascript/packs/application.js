@@ -36,3 +36,4 @@ document.addEventListener('turbolinks:load', () => {
 
 import "controllers"
 import "../card-swiper"
+import "../hammer-min"
