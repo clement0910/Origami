@@ -1,3 +1,57 @@
-<h1>Mon profil</h1>
+<div class="container bg-blue">
+<div class="bg">
+  <%= image_tag("logo_origami_v10Fichier 33-8.png", :alt => "logo") %>
+</div>
 
-<%= render 'profile_avatar', user: current_user %>
+<div class="container">
+  <div class="img__profile">
+    <img src="<%= cl_image_path current_user.photo.key %>" alt="profile">
+    <div class="name"><%= "#{current_user.first_name} #{current_user.last_name}" %></div>
+    <div class="id"><%= current_user.gender %></div>
+  </div>
+
+  <div class="item">
+    <%= image_tag("Profile.png", :alt => "profile") %>
+    <span>My Profile</span>
+    <div class="icon">
+      <%= image_tag("chevron-right.png", :alt => "chevron") %>
+    </div>
+  </div>
+  <div class="item">
+    <img src="assets/img/icon/Wallet.png" alt="Wallet.png">
+    <span>Saldo</span>
+    <div class="icon">
+      <img src="assets/img/icon/chevron-right.png" alt="more">
+    </div>
+  </div>
+  <div class="item">
+    <img src="assets/img/icon/map-pin.png" alt="map-pin.png">
+    <span>Address</span>
+    <div class="icon">
+      <img src="assets/img/icon/chevron-right.png" alt="more">
+    </div>
+  </div>
+  <div class="item">
+    <img src="assets/img/icon/Notification.png" alt="Notification.png">
+    <span>Notification</span>
+    <div class="icon">
+      <img src="assets/img/icon/chevron-right.png" alt="more">
+    </div>
+  </div>
+  <div class="item">
+    <img src="assets/img/icon/Setting.png" alt="Setting.png">
+    <span>Settings</span>
+    <div class="icon">
+      <img src="assets/img/icon/chevron-right.png" alt="more">
+    </div>
+  </div>
+  <div class="item__logout">
+    <%= image_tag("log-out.png", :alt => "logout") %>
+    <span>Logout</span>
+    <div class="icon">
+      <img src="chevron-right.png" alt="chevron">
+    </div>
+  </div>
+</div>
+</div>
+<%= render 'pages/tab_bar'%>

@@ -1,12 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-    static targets = ['btn', 'form', 'profile']
-
-    displayForm() {
-        this.btnTarget.classList.add('none')
-        this.formTarget.classList.remove('none')
-    }
+    static targets = ['form', 'profile']
 
     updateAvatar(event) {
         event.preventDefault();
