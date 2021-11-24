@@ -23,7 +23,8 @@ module Origami
     # the framework and any gems in your application.
     #
     RSpotify::authenticate(ENV['CLIENT_ID_SPOTIFY'], ENV['CLIENT_SECRET_SPOTIFY'])
-
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    
     config.hosts << "origami-clement0910.herokuapp.com"
     config.hosts << /.+.ngrok.io/
   end

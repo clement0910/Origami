@@ -8,7 +8,7 @@ export default class extends Controller {
         this.formTarget.classList.remove('none')
     }
 
-    update(event) {
+    updateAvatar(event) {
         event.preventDefault();
         const url = this.formTarget.action
         fetch(url, {

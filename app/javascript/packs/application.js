@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import "@fortawesome/fontawesome-free/css/all"
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -26,14 +27,16 @@ require("channels")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
-import { initServiceWorker } from '../service_workers/application';
+import { initChatroomCable} from "../channels/chatroom_channel";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-    initServiceWorker();
+    initChatroomCable()
 });
 
 import "controllers"
+<<<<<<< HEAD
 import "../card-swiper"
 import "../hammer-min"
+=======
+>>>>>>> 26df32463c3391d2fead07c64636060b240fbfc3
