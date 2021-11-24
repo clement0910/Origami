@@ -1,7 +1,11 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.first_name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
+<!--<div class="message-container" id="message-<%#= message.id %>">-->
+<!--  <i class="author">-->
+<!--    <span><%#= message.user.first_name %></span>-->
+<!--    <small><%#= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>-->
+<!--  </i>-->
+<!--  <p><%#= message.content %></p>-->
+<!--</div>-->
+<div class="talk left">
+  <img src="ressources/avatar2.jpg">
   <p><%= message.content %></p>
 </div>

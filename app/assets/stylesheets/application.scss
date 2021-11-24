@@ -7,6 +7,7 @@
 @import "pages/index";
 @import "devise/index";
 @import "components/profile";
+@import "chatroom/index";
 
 @font-face {
   font-family: 'Quicksand Regular';
@@ -32,39 +33,156 @@ body {
 .none {
   display: none;
 }
-
-.tinder {
-  padding: 0.4em;
-  margin-left: 2em;
-  margin-right: 2em;
-  display: flex;
-  justify-content: space-around;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.29);
-  border: linear-gradient(117deg, rgba(216,217,0,1) 0%, rgba(225,132,2,1) 19%, rgba(204,83,220,1) 48%, rgba(233,100,181,1) 79%, rgba(255,193,7,1) 100%) solid 5px;
-  border-radius: 1em;
-  background: linear-gradient(43deg, rgba(255,175,33,1) 0%, rgba(255,111,0,1) 100%);
-  color: white;
-  }
-
-.tinder--card {
-  text-align: center;
+main {
+  width: 300px;
+  max-width: 90%;
 }
 
-.tinder--card img {
-  margin-top: 1em;
-  width: max-content;
-  object-fit: cover;
-  border-radius: 1em;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+img {
+  max-width: 100%;
 }
 
-.small-container {
-  font-size: large;
-  font-weight: 600;
-  text-align: center;
-  color: black;
+.profiles {
+  width:100%;
+  position: relative;
+  height:450px;
+}
+
+.profile {
+  margin-top: 5em;
+  margin-left: 3.8em;
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  cursor:pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.profiles::before {
+  content:'Plus rien à matcher...';
+  color:var(--dark-grey);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+.profile__image {
+  height: 0;
+  padding-bottom:150%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.profile__infos {
+  padding:12px;
+  position:absolute;
+  bottom:0px;
+  background:linear-gradient(0deg, black, transparent);
+  width: 100%;
+}
+
+.profile__name {
+  color:white;
+  font-weight: bold;
+  font-size:22px;
+}
+
+.profile__age {
+  color:var(--light-grey);
+  font-weight: normal;
+}
+
+.profile__description {
+  color:white;
+  font-size:13px;
+}
+
+
+.bottombar {
+  margin-top:24px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:24px;
+}
+
+.bottombar__button {
+  width: 64px;
+  height: 64px;
+  border-radius:100%;
+  background:white;
+  padding:16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.4s;
+}
+
+.bottombar__button:hover {
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.bottombar__button2 {
+  margin-top: 0.1em;
+  width: 64px;
+  height: 64px;
+  border-radius:100%;
+  background:white;
+  padding:16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.4s;
+}
+
+.bottombar__button2:hover {
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.profile--match {
+  transition: var(--transition-time);
+  transform:translateX(1500px) translateY(600px) rotate(90deg);
+}
+
+.profile--next {
+  transition: var(--transition-time);
+  transform:translateX(-1500px) translateY(600px) rotate(-90deg);
+}
+
+.profile--back {
+  transition:var(--transition-time);
+}
+
+.profile--matching::after, .profile--nexting::after {
+  content:'MATCH';
+  font-weight: 900;
+  font-size:28px;
+  padding:8px 12px;
+  border:solid 2px var(--green);
+  color:white;
+  background:var(--black-transparent);
+  position:absolute;
+  top:24px;
+  right:72px;
+  border-radius: 4px;
+  transform:rotate(24deg);
 }
 
 .big-container-center {
   text-align: center;
+}
+
+.profile--nexting::after {
+  content:'LIKE';
+  border:solid 2px var(--red);
+  color:var(--red);
 }
