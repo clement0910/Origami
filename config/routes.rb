@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   get '/messages', to: 'room#index'
 
   get '/auth/spotify/callback', to: 'users#spotify'
-
 end
