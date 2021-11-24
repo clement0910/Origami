@@ -12,7 +12,7 @@
                   placeholder: 'Email',
                   label: '',
                   input_html: { autocomplete: "email", class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPassword'}}%>
-      <div data-action="keydown->toggle-field-registration#showPassword" class="btn btn-color">Continuer</div>
+      <div data-action="click->toggle-field-registration#showPassword" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
       <progress id="file" max="100" value="25"></progress>
@@ -22,13 +22,13 @@
                   placeholder: 'Mot de passe',
                   label: '',
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password",  class: 'input-registration'} %>
+                  input_html: { autocomplete: "new-password",  class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPassword'}} %>
       <%= f.input :password_confirmation,
                   required: true,
                   placeholder: 'Confirmer mot de passe',
                   label: '',
-                  input_html: { autocomplete: "new-password", class: 'input-registration' } %>
-      <div data-action="click->toggle-field-registration#showName" class="btn btn-color">Continuer</div>
+                  input_html: { autocomplete: "new-password", class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showName'} } %>
+      <div data-action="click->toggle-field-registration#showName" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="name">
       <progress id="file" max="100" value="37.5"></progress>
@@ -39,38 +39,38 @@
       <%= f.input  :last_name,
                    placeholder: 'Nom',
                    label: '',
-                   input_html: { class: 'input-registration' }%>
-      <div data-action="click->toggle-field-registration#showGender" class="btn btn-color">Continuer</div>
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showGender'} }%>
+      <div data-action="click->toggle-field-registration#showGender" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
       <progress id="file" max="100" value="50"></progress>
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
-                   input_html: { class: 'input-registration' }%>
-      <div data-action="click->toggle-field-registration#showCity" class="btn btn-color">Continuer</div>
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity'} }%>
+      <div data-action="click->toggle-field-registration#showCity" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city">
       <progress id="file" max="100" value="62.5"></progress>
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
-                   input_html: { class: 'input-registration' }%>
-      <di data-action="click->toggle-field-registration#showBirthday" class="btn btn-color">Continuer</di>
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showBirthday'} }%>
+      <di data-action="click->toggle-field-registration#showBirthday" class="btn btn-color" id="next">Continuer</di>
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
       <progress id="file" max="100" value="75"></progress>
       <%= f.input  :birthday,
                    placeholder: 'Anniversaire',
                    label: '',
-                   input_html: { class: 'input-registration' }%>
-      <div data-action="click->toggle-field-registration#showPhoto" class="btn btn-color">Continuer</div>
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPhoto'} }%>
+      <div data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
       <progress id="file" max="100" value="87.5"></progress>
       <%= f.input  :photo, as: :file %>
       <div class="form-actions">
-        <%= f.button :submit, "Terminer", class: 'btn btn-color' %>
+        <%= f.button :submit, "Terminer", class: 'btn btn-color', disabled: true,  id: 'submit', data: { :toggle_field_registration_target => "submit" }%>
       </div>
     </div>
   </div>
