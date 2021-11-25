@@ -1,27 +1,24 @@
-<main>
-<div class="swipe-infos">
-  <p>Swipe vers la droite ou la gauche !</p>
-</div>
-<% @themes.each do |theme| %>
-  <% theme.questions.each do |question| %>
-      <div class="profiles">
-        <div class="profile">
-          <div class="profile__image" style="background-image: url('https://source.unsplash.com/random');">
-              <div class="profile__infos">
-                <div class="profile__name">Catégorie : <%= theme.name %></div>
-              <div class="profile__description"> <%= question.content %></div>
-          </div>
-        </div>
+  <div class="tinder">
+    <div class="tinder--status">
+      <i class="fas fa-times"></i>
+      <i class="fa fa-heart"></i>
+    </div>
+
+    <div class="tinder--cards">
+      <% @themes.each do |theme| %>
+      <% theme.questions.each do |question| %>
+      <div class="tinder--card">
+        <img src="https://source.unsplash.com/random">
+        <h3>Catégorie : <%= theme.name %></h3>
+        <p><%= question.content %></p>
       </div>
   <% end %>
-<% end %>
-
-    <div class="bottombar">
-      <div class="bottombar__button">
-        <img src="https://www.svgrepo.com/show/124149/cross-sign.svg">
-      </div>
-      <div class="bottombar__button2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/2258px-Love_Heart_SVG.svg.png">
-      </div>
+        <% end %>
     </div>
-    <%= render 'pages/tab_bar'%>
+
+    <div class="tinder--buttons">
+      <button id="nope"><i class="fas fa-times"></i></button>
+      <button id="love"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
+<%= render 'pages/tab_bar'%>
