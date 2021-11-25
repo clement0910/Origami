@@ -13,13 +13,25 @@ function initCards(card, index) {
   newCards.forEach(function (card, index) {
     card.style.zIndex = allCards.length - index;
     card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
-    card.style.opacity = (10 - index) / 10;
+    card.style.opacity = (10 - index) / 5;
   });
 
   tinderContainer.classList.add('loaded');
 }
 
 initCards();
+
+function storeAnswers(questionId, answer) {
+  const url = `http://localhost:3000/swiper-answer`;
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ question_id: questionId, answer: answer })
+  });
+}
 
 allCards.forEach(function (el) {
   var hammertime = new Hammer(el);
@@ -28,18 +40,25 @@ allCards.forEach(function (el) {
     el.classList.add('moving');
   });
 
+  hammertime.on("panleft panright", function (ev) {
+    if (ev.isFinal) {
+      if (ev.deltaX > 0) {
+        storeAnswers(el.id, true)
+      } else {
+        storeAnswers(el.id, false)
+      }};
+  });
+
   hammertime.on('pan', function (event) {
     if (event.deltaX === 0) return;
     if (event.center.x === 0 && event.center.y === 0) return;
 
     tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
     tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
-
-    var xMulti = event.deltaX * 0.03;
-    var yMulti = event.deltaY / 80;
-    var rotate = xMulti * yMulti;
-
-    event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
+    if (event.deltaX > 0){
+      event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(-10deg)';}
+      else {
+      event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(10deg)';}
   });
 
   hammertime.on('panend', function (event) {
@@ -59,11 +78,8 @@ allCards.forEach(function (el) {
       var toX = event.deltaX > 0 ? endX : -endX;
       var endY = Math.abs(event.velocityY) * moveOutWidth;
       var toY = event.deltaY > 0 ? endY : -endY;
-      var xMulti = event.deltaX * 0.03;
-      var yMulti = event.deltaY / 80;
-      var rotate = xMulti * yMulti;
 
-      event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+      event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(10deg)';
       initCards();
     }
   });
@@ -82,8 +98,10 @@ function createButtonListener(love) {
 
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      storeAnswers(card.id, true);
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+      storeAnswers(card.id, false);
     }
 
     initCards();
@@ -97,4 +115,3 @@ var loveListener = createButtonListener(true);
 
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
-
