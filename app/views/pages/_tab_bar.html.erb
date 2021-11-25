@@ -22,7 +22,7 @@
 		</span>
     <span class="link-title">Swipe</span>
     <% end %>
-    <%= link_to chatrooms_path, class: 'link' do %>
+    <%= link_to chatrooms_path, class: "link #{'active' if current_page?(chatrooms_path)}" do %>
 		<span class="link-icon">
 			<!-- icon -->
 			<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">

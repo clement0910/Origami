@@ -16,6 +16,11 @@
   border-bottom: 1px solid rgba(51,51,51,0.2);
 }
 
+.back {
+  padding-top: 2vh;
+  padding-left: 2vw;
+}
+
 .location {
   width: 100px;
   display: flex;
@@ -98,7 +103,7 @@
 }
 .right p {
   margin-right: 10px;
-  background:#0078FF;
+  background:#ffba08;
 }
 .left p {
   margin-left: 10px;
