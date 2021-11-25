@@ -7,7 +7,7 @@
     <div class="tinder--cards">
       <% @themes.each do |theme| %>
       <% theme.questions.each do |question| %>
-      <div class="tinder--card">
+      <div class="tinder--card" id="<%= question.id %>">
         <img src="https://source.unsplash.com/random">
         <h3>Catégorie : <%= theme.name %></h3>
         <p><%= question.content %></p>
