@@ -30,6 +30,7 @@ body {
   font-family: 'Quicksand Regular', sans-serif;
 }
 
+
 .none {
   display: none;
 }
@@ -42,6 +43,7 @@ body {
 body {
   overflow: hidden;
   font-family: sans-serif;
+  overscroll-behavior-y: none;
 }
 
 .tinder {
