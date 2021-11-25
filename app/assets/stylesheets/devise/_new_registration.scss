@@ -29,6 +29,7 @@ progress {
   left: 0;
   width:100vw;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 
 progress::-webkit-progress-value {
@@ -37,6 +38,12 @@ progress::-webkit-progress-value {
 }
 progress::-webkit-progress-bar {
   background: #eee;
+}
+
+select {
+  -webkit-appearance: none;
+  background: white;
+  color: #757575;
 }
 
 .arrow-left {
