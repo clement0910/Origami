@@ -1,1 +1,14 @@
-Comment il va celui-la ? alors ?
+<div class="chatrooms">
+  <% @chatrooms.each do |chatroom|  %>
+    <%= link_to chatroom_path(chatroom), class: 'link-chatroom' do %>
+      <div class="chatroom">
+        <img class="image-chatroom" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" alt="">
+        <div class="info">
+          <p class="chatroom-name"><%= chatroom.name %></p>
+          <p class="last-message"><%= chatroom.messages.last.content %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <%= render 'pages/tab_bar'%>
+</div>
