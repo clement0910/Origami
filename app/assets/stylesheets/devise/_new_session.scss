@@ -1,0 +1,26 @@
+.container-login {
+  text-align: center;
+  background: #fff;
+  height: 100vh;
+  gap: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-login h2 {
+  font-size: 30px;
+}
+
+.container-login a {
+  color: #ff6f00;
+  text-decoration: none;
+}
+
+.password-container > .input {
+  margin-bottom: 4vh;
+}
+
+.password-container {
+  margin-bottom: 4vh;
+}
