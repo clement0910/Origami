@@ -97,19 +97,26 @@
   justify-content: flex-end;
 }
 .left {
-  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
 }
 .right p {
   margin-right: 10px;
   background:#ffba08;
 }
 .left p {
-  margin-left: 10px;
+  margin-left: 15px;
   background: rgb(216,216,216);
   color: #000;
+}
+.left small {
+  position: absolute;
+  color: #000;
+  left: 80px;
+  top: -20px;
 }
 
 /* **********FORM********** */
