@@ -16,7 +16,7 @@
                   autofocus: true,
                   placeholder: 'Email',
                   label: '',
-                  input_html: { autocomplete: "email", class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showEmail', toggle_field_registration_target: "emailin"}}%>
+                  input_html: { autocomplete: "email", class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showEmail', toggle_field_registration_target: "emailin"}}%>
       <div data-toggle-field-registration-target="emailbut" data-action="click->toggle-field-registration#showEmail" class="btn btn-color none" id="next">Continuer</div>
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
@@ -30,12 +30,12 @@
                   placeholder: 'Mot de passe',
                   label: '',
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password",  class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPassword', toggle_field_registration_target: "passwordin"}} %>
+                  input_html: { autocomplete: "new-password",  class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPassword', toggle_field_registration_target: "passwordin"}} %>
       <%= f.input :password_confirmation,
                   required: true,
                   placeholder: 'Confirmer mot de passe',
                   label: '',
-                  input_html: { autocomplete: "new-password", class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPassword', toggle_field_registration_target: "passwordconfin"} } %>
+                  input_html: { autocomplete: "new-password", class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPassword', toggle_field_registration_target: "passwordconfin"} } %>
       <div data-toggle-field-registration-target="passwordbut" data-action="click->toggle-field-registration#showPassword" class="btn btn-color none" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="name">
@@ -50,7 +50,7 @@
       <%= f.input  :last_name,
                    placeholder: 'Nom',
                    label: '',
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showName' , toggle_field_registration_target: "namein"} }%>
+                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showName' , toggle_field_registration_target: "namein"} }%>
       <div data-toggle-field-registration-target="namebut" data-action="click->toggle-field-registration#showName" class="btn btn-color none" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
@@ -61,11 +61,11 @@
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
+                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showGender', toggle_field_registration_target: "genderin"} },
                    collection: %w[homme femme autre],
                    include_blank: 'Genre',
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showGender', toggle_field_registration_target: "gender"},
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity'} } }%>
-      <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color none" id="next">Continuer</div>
+                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity'} }%>
+      <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city">
       <progress id="file" max="100" value="62.5"></progress>
@@ -75,7 +75,7 @@
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity', toggle_field_registration_target: "cityin"} }%>
+                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity', toggle_field_registration_target: "cityin"} }%>
       <div data-toggle-field-registration-target="citybut" data-action="click->toggle-field-registration#showCity" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
@@ -89,7 +89,7 @@
                    :as => :date, :start_year => Date.today.year - 90,
                    :end_year => Date.today.year - 18,
                    :order => [:day, :month, :year],
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPhoto'} }%>
+                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPhoto'} }%>
        <div data-toggle-field-registration-target="birthdaybut" data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">

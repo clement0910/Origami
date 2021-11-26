@@ -18,7 +18,7 @@ export default class extends Controller {
         this.passwordTarget.classList.toggle('none');
         this.nameTarget.classList.toggle('none')
       }
-      if (event.keyCode > 0 && this.passwordinTarget.value.length >= 5 && this.passwordconfinTarget.value.length >= 5) {
+      if (event.keyCode > 0 && this.passwordinTarget.value.length >= 6 && this.passwordconfinTarget.value.length >= 6) {
         this.passwordbutTarget.classList = 'btn btn-color';
       }
     }
@@ -34,12 +34,9 @@ export default class extends Controller {
     }
 
     showGender(event) {
-      if ((event.keyCode === 13 || event.target.id === 'next') && (this.genderinTarget.value === "homme" || this.genderinTarget.value === "femme")) {
+      if (event.keyCode === 13 || event.target.id === 'next') {
         this.genderTarget.classList.toggle('none');
         this.cityTarget.classList.toggle('none')
-      }
-      if (event.keyCode > 0 && (this.genderinTarget.value === "homm" || this.genderinTarget.value === "femm")) {
-        this.genderbutTarget.classList = 'btn btn-color';
       }
     }
 
