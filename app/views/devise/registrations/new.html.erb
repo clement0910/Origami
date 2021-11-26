@@ -6,7 +6,9 @@
     <div class="email" data-toggle-field-registration-target="email">
       <progress id="file" max="100" value="12.5"></progress>
       <%= link_to root_path  do %>
-        <i class="fas fa-chevron-left arrow-left"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
       <% end %>
       <h2>Mon adresse email</h2>
       <%= f.input :email,
@@ -19,7 +21,9 @@
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
       <progress id="file" max="100" value="25"></progress>
-        <i data-action="click->toggle-field-registration#showEmail" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showEmail" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <h2>Mon mot de passe</h2>
       <%= f.input :password,
                   required: true,
@@ -36,7 +40,9 @@
     </div>
     <div class="none" data-toggle-field-registration-target="name">
       <progress id="file" max="100" value="37.5"></progress>
-      <i data-action="click->toggle-field-registration#showPassword" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showPassword" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <%= f.input  :first_name,
                    placeholder: 'Prénom',
                    label: '',
@@ -49,20 +55,23 @@
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
       <progress id="file" max="100" value="50"></progress>
-      <i data-action="click->toggle-field-registration#showName" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showName" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
-
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showGender', toggle_field_registration_target: "genderin"} }%>
                    collection: %w[homme femme autre],
                    include_blank: 'Genre',
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity'} }%>
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showGender', toggle_field_registration_target: "gender"},
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity'} } }%>
       <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color none" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city">
       <progress id="file" max="100" value="62.5"></progress>
-      <i data-action="click->toggle-field-registration#showGender" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showGender" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
@@ -71,7 +80,9 @@
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
       <progress id="file" max="100" value="75"></progress>
-      <i data-action="click->toggle-field-registration#showCity" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showCity" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <%= f.input  :birthday,
                    placeholder: 'Anniversaire',
                    label: '',
@@ -83,7 +94,9 @@
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
       <progress id="file" max="100" value="87.5"></progress>
-      <i data-action="click->toggle-field-registration#showBirthday" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showBirthday" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
       <%= f.input  :photo, as: :file %>
       <div class="form-actions">
         <%= f.button :submit, "Terminer", class: 'btn btn-color', disabled: true,  id: 'submit', data: { :toggle_field_registration_target => "submit" }%>

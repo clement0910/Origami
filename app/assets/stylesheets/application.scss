@@ -22,7 +22,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand Regular', sans-serif;
-  background-color: #FF6F00;
+  background: rgb(255,175,33);
+  background: linear-gradient(43deg, rgba(255,175,33,1) 0%, rgba(255,111,0,1) 100%);
   height: max-content;
 }
 
