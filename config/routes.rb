@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/swiper', to: "questions#index"
   get '/profile', to: 'users#profile'
+  post '/swiper-answer', to: "answers#create_from_swiper"
+
   resources :users, only: [:show] do
     patch :update_avatar
     patch :update_job

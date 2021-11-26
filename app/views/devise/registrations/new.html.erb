@@ -20,6 +20,7 @@
     <div class="password none" data-toggle-field-registration-target="password">
       <progress id="file" max="100" value="25"></progress>
         <i data-action="click->toggle-field-registration#showEmail" class="fas fa-chevron-left arrow-left" id="next"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left arrow-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
       <h2>Mon mot de passe</h2>
       <%= f.input :password,
                   required: true,
@@ -53,7 +54,11 @@
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
+
                    input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showGender', toggle_field_registration_target: "genderin"} }%>
+                   collection: %w[homme femme autre],
+                   include_blank: 'Genre',
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showCity'} }%>
       <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color none" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city">
@@ -71,8 +76,11 @@
       <%= f.input  :birthday,
                    placeholder: 'Anniversaire',
                    label: '',
-                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showBirthday'} }%>
-      <div data-toggle-field-registration-target="birthdaybut" data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
+                   :as => :date, :start_year => Date.today.year - 90,
+                   :end_year => Date.today.year - 18,
+                   :order => [:day, :month, :year],
+                   input_html: { class: 'input-registration', data: { action: 'keydown->toggle-field-registration#showPhoto'} }%>
+       <div data-toggle-field-registration-target="birthdaybut" data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
       <progress id="file" max="100" value="87.5"></progress>

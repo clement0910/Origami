@@ -1,16 +1,29 @@
 <div class="container-login">
+  <%= link_to root_path  do %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left arrow-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  <% end %>
   <h2>Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
+                  label: false,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  placeholder: 'Email',
+                  input_html: { autocomplete: "email",
+                                class: 'input-registration'} %>
+      <div class="password-container">
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    placeholder: 'Mot de passe',
+                    input_html: { autocomplete: "current-password",
+                                  class: 'input-registration',
+                                  id: 'password-session'} %>
+        <%= render "devise/shared/links" %>
+      </div>
+      <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">
@@ -18,5 +31,4 @@
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>

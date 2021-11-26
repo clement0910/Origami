@@ -1,32 +1,13 @@
-<!--<h1>#<%#= @chatroom.name %></h1>-->
-<!--<div id="messages" data-room-id="<%#= @chatroom.id %>">-->
-
-  <%# @chatroom.messages.each do |message| %>
-    <%#= render 'messages/message', message: message %>
-  <%# end %>
-
-<!--</div>-->
-
-
-
-    <%# @chatroom.messages.each do |message| %>
-    <%#= render 'messages/message', message: message %>
-    <%# end %>
-<!--  </div>-->
-<!--  <div class="text-bar">-->
-    <%#= form_for [ @chatroom, @message ], html: {class: 'text-bar__field'}, id: 'form-message', remote: true do |f| %>
-      <%#= f.text_field :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "input-send" %>
-    <%# end %>
-<!--  </div>-->
-<!--</div>-->
-
 <div class="chat-global">
 
   <div class="nav-top">
-    <div class="location">
-      <i class="fas fa-chevron-left"></i>
-      <p>Back</p>
-    </div>
+    <%= link_to chatrooms_path, class: 'back' do %>
+      <div class="location">
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path d="M11.739,13.962c-0.087,0.086-0.199,0.131-0.312,0.131c-0.112,0-0.226-0.045-0.312-0.131l-3.738-3.736c-0.173-0.173-0.173-0.454,0-0.626l3.559-3.562c0.173-0.175,0.454-0.173,0.626,0c0.173,0.172,0.173,0.451,0,0.624l-3.248,3.25l3.425,3.426C11.911,13.511,11.911,13.789,11.739,13.962 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.148,3.374,7.521,7.521,7.521C14.147,17.521,17.521,14.148,17.521,10"></path>
+        </svg>
+      </div>
+    <% end %>
 
     <div class="utilisateur">
       <p><%= @chatroom.name %></p>
@@ -46,22 +27,6 @@
          <%= render 'messages/message', message: message %>
       <% end %>
     <% end %>
-<!--    <div class="talk left">-->
-<!--      <img src="ressources/avatar2.jpg">-->
-<!--      <p>Lorem ipsum dolor sit amet.</p>-->
-<!--    </div>-->
-<!--    <div class="talk right">-->
-<!--      <p>Lorem ipsum dolor sit amet.</p>-->
-<!--      <img src="ressources/avatar1.jpg">-->
-<!--    </div>-->
-<!--    <div class="talk left">-->
-<!--      <img src="ressources/avatar2.jpg">-->
-<!--      <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>-->
-<!--    </div>-->
-<!--    <div class="talk right">-->
-<!--      <p>Lorem ipsum dolor sit amet.</p>-->
-<!--      <img src="ressources/avatar1.jpg">-->
-<!--    </div>-->
   </div>
   <%= form_for [ @chatroom, @message ], html: {class: 'chat-form'}, id: 'form-message', remote: true do |f| %>
 
@@ -72,7 +37,9 @@
         <i class="far fa-grin-beam"></i>
       </div>
       <button class="submit-msg-btn">
-        <i class="far fa-paper-plane"></i>
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path d="M17.218,2.268L2.477,8.388C2.13,8.535,2.164,9.05,2.542,9.134L9.33,10.67l1.535,6.787c0.083,0.377,0.602,0.415,0.745,0.065l6.123-14.74C17.866,2.46,17.539,2.134,17.218,2.268 M3.92,8.641l11.772-4.89L9.535,9.909L3.92,8.641z M11.358,16.078l-1.268-5.613l6.157-6.157L11.358,16.078z"></path>
+        </svg>
       </button>
     </div>
   <% end %>
