@@ -25,7 +25,7 @@ Question.create!(content:"Bandes dessinées ou Romans ?", weight: 0.3, theme: Th
 Question.create!(content:"Pour t'informer, plutôt réseaux sociaux ou journaux ?", weight: 0.5, theme: Theme.last)
 Question.create!(content:"Tintin ou One Peace ?", weight: 0.3, theme: Theme.last)
 Theme.create!(name: "Musique")
-Question.create!(content:"Veux-tu te connecter à Spotify ?")
+Question.create!(content:"Veux-tu te connecter à Spotify ?", weight: 0.0, theme: Theme.last)
 Question.create!(content:"Grand mélomane ou simple amateur de musique ?", weight: 0.4, theme: Theme.last)
 Theme.create!(name: "Gastronomie")
 Question.create!(content:"Livraison à domicile ou Restaurant ? ", weight: 0.3, theme: Theme.last)
