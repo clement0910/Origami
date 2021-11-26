@@ -1,117 +1,73 @@
-:root {
-
-  /* Colores */
-  --text-color: #011341;
-  --gray-color: #828282;
-  --icon-color: #5D83EF;
-  --container-color: #FBFCFF;
-
-  /* Typography */
-  --body-font: 'Poppins';
+.svg-icon {
+  width: 1em;
+  height: 1em;
 }
 
-.bg img {
-  /* Full height */
-  height: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #000;
 }
 
-.img__profile {
-  display: grid;
-  position: relative;
+.svg-icon circle {
+  stroke: #000;
+  stroke-width: 1;
 }
 
-.img__profile img {
+.container-profile {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.header-profile {
+  width: 100%;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  gap: 2vh;
+}
+
+.header-profile img {
   width: 150px;
   height: 150px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: -100px;
+  margin: 0 auto;
   object-fit: cover;
-  overflow: hidden;
   border-radius: 200px;
   box-shadow: 0px 40px 40px rgba(32, 79, 211, 0.16);
 }
 
 .name {
-  font-size: 20px;
-  line-height: 54px;
-  text-align: center;
-  font-weight: 600;
-  font-style: normal;
   color: var(--text-color);
 }
 
 .description {
-  font-size: 17px;
   text-align: center;
   font-style: normal;
 }
 
 
-.id {
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: normal;
-  font-style: normal;
+.age {
   color: var(--gray-color);
   text-align: center;
-  margin-top: -15px;
 }
 
 .item {
-  padding: 10px;
-  display: grid;
-  margin-top: 50px;
-  margin: 10px;
-  grid-template-columns: 15% 80% 10%;
-  color: var(--text-color);
+  border-bottom: 1px solid #eee;
+  padding: 2vh 5vw;
+  display: flex;
+  align-items: center;
+  gap: 8vw;
 }
 
-
-.item img {
-  width: 24px;
+.photo-icon {
+  width: 2em;
+  height: 2em;
 }
 
-
-.item span {
-  font-style: normal;
-  font-weight: 550;
-  padding: 8px;
-  line-height: 16px;
-}
-
-.item__logout {
-  padding: 10px;
-  display: grid;
-  margin-top: 3rem !important;
-  margin: 10px;
-  grid-template-columns: 15% 80% 10%;
-  color: var(--text-color);
-}
-
-.item__logout img{
-  width: 24px;
-}
-
-.item__logout span {
-  font-style: normal;
-  font-weight: 550;
-  padding: 8px;
-  line-height: 16px;
-
-}
-
-.bg-blue {
-  background-color: white;
-}
-/* Responsive layout */
-@media screen and (max-width: 600px) {
-
-  .bg img {
-    width: 100%;
-    margin-top: 0;
-  }
+.arrow {
+ margin-left: auto;
 }
