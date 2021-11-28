@@ -6,7 +6,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-import "@fortawesome/fontawesome-free/css/all"
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,6 +23,9 @@ import "@fortawesome/fontawesome-free/css/all"
 // External imports
 
 // Internal imports, e.g:
+
+import "controllers"
+
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initTinder } from "../plugins/card-swiper";
@@ -33,7 +35,3 @@ document.addEventListener('turbolinks:load', () => {
     initChatroomCable()
     initTinder()
 });
-
-import "controllers"
-import "../plugins/card-swiper.js"
-import "../plugins/hammer-min.js"
