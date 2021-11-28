@@ -42,3 +42,4 @@ Question.create!(content:"Sport collectif ou sport individuel ?", weight: 0.7, t
 Question.create!(content:"Football ou Tennis ?", weight: 0.6, theme: Theme.last)
 Question.create!(content:"Esprit Compétition ou Mental de collaboration ?", weight: 0.6, theme: Theme.last)
 Chatroom.create!(name: "Groupe d'amis")
+Message.create!(content: "Comment ils vont alors ceux-la?", chatroom: Chatroom.last, user: User.last)

@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="conversation">
+  <div class="conversation" id="messages", data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <% if message.user == current_user %>
           <%= render 'messages/my_message', message: message %>
@@ -28,11 +28,9 @@
       <% end %>
     <% end %>
   </div>
-  <%= form_for [ @chatroom, @message ], html: {class: 'chat-form'}, id: 'form-message', remote: true do |f| %>
-
+  <%= simple_form_for [ @chatroom, @message ], html: {class: 'chat-form'}, remote: true, id: 'form-message' do |f| %>
     <div class="container-inputs-stuffs">
       <div class="group-inp">
-<!--        <textarea placeholder="Enter your message here" minlength="1" maxlength="1500"></textarea>-->
         <%= f.text_field :content, label: false, placeholder: "Enter your message here"%>
         <i class="far fa-grin-beam"></i>
       </div>
