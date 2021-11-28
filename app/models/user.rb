@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   validates :first_name, :last_name, :birthday, :gender, :city, presence: true
-  validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "Ce champ n'accepte que les lettres." }
-  validates :gender, inclusion: { in: %w[homme femme] }
+  validates :first_name, :last_name, format: { with: /\A[a-zA-Z\u00C0-\u00FF]*\z/, message: "Ce champ n'accepte que les lettres." }
+  validates :gender, inclusion: { in: %w[Homme Femme] }
   validates :first_name, :last_name, length: { minimum: 2, message: "Le champ est trop court." }
   validates :photo, attached: true, content_type: %i[png jpg jpeg]
   before_save :update_name!

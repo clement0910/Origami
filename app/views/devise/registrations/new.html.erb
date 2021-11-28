@@ -10,7 +10,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       <% end %>
-      <h2>Mon adresse email</h2>
+      <h2>Mon adresse mail</h2>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -62,7 +62,7 @@
                    placeholder: 'Genre',
                    label: '',
                    input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showGender', toggle_field_registration_target: "genderin"} },
-                   collection: %w[homme femme autre],
+                   collection: %w[Homme Femme Autre],
                    include_blank: 'Genre',
                    input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity'} }%>
       <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color" id="next">Continuer</div>
@@ -76,6 +76,10 @@
                    placeholder: 'Ville',
                    label: '',
                    input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity', toggle_field_registration_target: "cityin"} }%>
+      <div data-controller="geolocation">
+        <div data-action="click->geolocation#geolocate">Trouvez-moi!</div>
+        <a data-geolocation-target="link"></a>
+      </div>
       <div data-toggle-field-registration-target="citybut" data-action="click->toggle-field-registration#showCity" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
