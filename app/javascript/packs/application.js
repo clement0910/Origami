@@ -29,9 +29,11 @@ import "controllers"
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initTinder } from "../plugins/card-swiper";
+import { preventScroll } from "../plugins/prevent_scroll";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
     initChatroomCable()
     initTinder()
+    preventScroll()
 });
