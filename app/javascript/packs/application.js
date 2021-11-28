@@ -26,12 +26,14 @@ import "@fortawesome/fontawesome-free/css/all"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initTinder } from "../plugins/card-swiper";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
     initChatroomCable()
+    initTinder()
 });
 
 import "controllers"
-import "../card-swiper.js"
-import "../hammer-min.js"
+import "../plugins/card-swiper.js"
+import "../plugins/hammer-min.js"
