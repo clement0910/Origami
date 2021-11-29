@@ -3,7 +3,7 @@ import { Controller } from "stimulus";
 export default class extends Controller {
     static targets = ['form', 'profile']
 
-    updateAvatar(event) {
+    update(event) {
         event.preventDefault();
         const url = this.formTarget.action
         fetch(url, {
