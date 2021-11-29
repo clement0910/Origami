@@ -1,18 +1,6 @@
 <div class="chatrooms">
 
-  <% if current_user.chatroom_id? %>
-    <h2 class="title">Groupe d'amis</h2>
-    <ul>
-    <% @chatroom.users.each do |user| %>
-      <li><%= image_tag user.photo, class: 'avatar-bordered' %><%= user.first_name %></li>
-    <% end %>
-    </ul>
-    <%= link_to chatroom_path(@chatroom, anchor: "message-#{@chatroom.messages.last.id}"), class: 'link-chatroom' do %>
       <img src="<%= image_path("onglet_appleFichier 40-8.png") %>" alt="logo" class="group">
-    <% end %>
-    <p class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, aperiam, architecto corporis dolore dolorem earum error et facere ipsam iusto magnam minima minus perferendis, porro quia repudiandae vitae voluptates.</p>
-  <% else %>
-  No group
-  <% end %>
+    <p class="message">Vous n'avez pas encore de conversation pour le moment </p>
 <%= render 'pages/tab_bar'%>
 </div>

@@ -1,9 +1,6 @@
 <div class="tinder">
 
   <div class="tinder--cards">
-    <div class="tinder--card presentation" id="1">
-      <%= image_tag question.photo %>
-    </div>
     <% @themes.each do |theme| %>
       <% theme.questions.each do |question| %>
         <div class="tinder--card" id="<%= question.id %>">
