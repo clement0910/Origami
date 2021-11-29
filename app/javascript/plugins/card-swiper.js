@@ -45,10 +45,13 @@ const initTinder = () => {
   initCards();
 
   function storeAnswers(questionId, answer) {
+    const csrfToken = document.querySelector("[name='csrf-token']").content
+
     const url = `${window.location.href}-answer`;
     fetch(url, {
       method: 'POST',
       headers: {
+        "X-CSRF-Token": csrfToken,
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
