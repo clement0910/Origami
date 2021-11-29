@@ -18,7 +18,7 @@ class CreateGroup
   end
 
   def transform_group_in_rating(two_users_groups, users_group)
-    if two_users_groups == 10 && (two_users_groups.sum / two_users_groups.count) > 0.7
+    if two_users_groups == 10 && (two_users_groups.sum / two_users_groups.count) > 0.7 && check_alone_gender(users_group)
       groups << { rating: (two_users_groups.sum / two_users_groups.count), group: users_group }
     end
   end
@@ -42,4 +42,20 @@ class CreateGroup
     groups = check_all_group
     groups.sort_by(&:rating) unless groups.empty?
   end
+
+  def check_alone_gender(groups)
+    homme = 0
+    femme = 0
+    groups.each do |user|
+      if user.gender == 'Homme'
+        homme += 1
+      else
+        femme += 1
+      end
+    end
+    return false unless homme == 1 || femme == 1
+
+    true
+  end
+
 end
