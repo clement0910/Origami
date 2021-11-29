@@ -22,6 +22,13 @@ const initTinder = () => {
     }
   }
 
+  function checkCardsEnding () {
+    console.log(document.querySelectorAll('.tinder--card:not(.removed)').length);
+    if (document.querySelectorAll('.tinder--card:not(.removed)').length === 1) {
+      console.log('HELLO');
+    }
+  }
+
   initCards();
 
   function storeAnswers(questionId, answer) {
@@ -45,13 +52,10 @@ const initTinder = () => {
 
     hammertime.on("panleft panright", function (ev) {
       if (ev.isFinal) {
-        if (ev.deltaX > 0) {
-          storeAnswers(el.id, true)
-        } else {
-          storeAnswers(el.id, false)
-        }
-      }
-      ;
+        const yes = (ev.deltaX > 0)
+        storeAnswers(el.id, yes)
+        checkCardsEnding();
+      };
     });
 
     hammertime.on('pan', function (event) {
@@ -102,28 +106,29 @@ const initTinder = () => {
 
       card.classList.add('removed');
 
+      var nopeListener = createButtonListener(false);
+      var loveListener = createButtonListener(true);
+
+      if (nope) {
+        nope.addEventListener('click', nopeListener);
+      }
       if (love) {
-        card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
-        storeAnswers(card.id, true);
-      } else {
-        card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
-        storeAnswers(card.id, false);
+        love.addEventListener('click', loveListener);
       }
 
+      if (love) {
+        card.style.transform = 'translate(' + moveOutWidth + 'px,) rotate(-30deg)';
+        storeAnswers(card.id, true);
+        checkCardsEnding();
+      } else {
+        card.style.transform = 'translate(-' + moveOutWidth + 'px,) rotate(30deg)';
+        storeAnswers(card.id, false);
+        checkCardsEnding();
+      }
       initCards();
 
       event.preventDefault();
     };
-  }
-
-  var nopeListener = createButtonListener(false);
-  var loveListener = createButtonListener(true);
-
-  if (nope) {
-    nope.addEventListener('click', nopeListener);
-  }
-  if (love) {
-    love.addEventListener('click', loveListener);
   }
 };
 
