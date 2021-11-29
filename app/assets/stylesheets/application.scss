@@ -22,8 +22,7 @@
 body {
   margin: 0;
   font-family: 'Quicksand Regular', sans-serif;
-  background-color: rgb(255,175,33);
-  background: linear-gradient(43deg, rgba(255,175,33,1) 0%, rgba(255,111,0,1) 100%);
+  background-color: #FF6F00;
   height: max-content;
 }
 
@@ -44,6 +43,7 @@ body {
 body {
   overflow: hidden;
   font-family: sans-serif;
+  background-color: #FF6F00;
   overscroll-behavior-y: none;
 }
 

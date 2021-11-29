@@ -25,7 +25,7 @@ const initTinder = () => {
   initCards();
 
   function storeAnswers(questionId, answer) {
-    const url = `http://localhost:3000/swiper-answer`;
+    const url = `${window.location.href}-answer`;
     fetch(url, {
       method: 'POST',
       headers: {

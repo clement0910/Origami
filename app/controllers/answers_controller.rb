@@ -3,7 +3,5 @@ class AnswersController < ApplicationController
 
   def create_from_swiper
     Answer.create(question_id: params["question_id"].to_i, response: params["answer"], user: current_user)
-
-    render json: { answer: "ok" }
   end
 end
