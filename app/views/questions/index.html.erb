@@ -1,14 +1,17 @@
 <div class="tinder">
 
   <div class="tinder--cards">
+    <div class="tinder--card presentation" id="1">
+      <%= image_tag question.photo %>
+    </div>
     <% @themes.each do |theme| %>
       <% theme.questions.each do |question| %>
         <div class="tinder--card" id="<%= question.id %>">
           <%= image_tag question.photo %>
-         <div class="text--container">
-         <h4> <%= question.content %></h4>
-         </div>
-      </div>
+           <div class="text--container">
+            <h4> <%= question.content %></h4>
+           </div>
+        </div>
     <% end %>
   <% end %>
 <div class="calculating--cards">

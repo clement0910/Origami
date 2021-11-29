@@ -6,5 +6,8 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatroom = current_user.chatroom
+    if current_user.chatroom_id?
+      redirect_to chatroom_path(@chatroom)
+    end
   end
 end
