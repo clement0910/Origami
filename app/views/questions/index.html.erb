@@ -1,14 +1,16 @@
 <div class="tinder">
 
   <div class="tinder--cards">
-    <% @themes.each do |theme| %>
-      <% theme.questions.each do |question| %>
-        <div class="tinder--card" id="<%= question.id %>">
-          <%= image_tag question.photo %>
-           <div class="text--container">
-            <h4> <%= question.content %></h4>
-           </div>
-        </div>
+    <% unless current_user.all_answered? %>
+      <% @themes.each do |theme| %>
+        <% theme.questions.each do |question| %>
+          <div class="tinder--card" id="<%= question.id %>">
+            <%= image_tag question.photo %>
+             <div class="text--container">
+              <h4> <%= question.content %></h4>
+             </div>
+          </div>
+      <% end %>
     <% end %>
   <% end %>
 <div class="calculating--cards">

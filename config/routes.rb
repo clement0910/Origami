@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/swiper-answer', to: "answers#create_from_swiper"
 
   resources :users, only: [:show] do
-    patch :update_avatar
+    patch :update_all_answered
     patch :update_job
   end
 
