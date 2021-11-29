@@ -2,12 +2,22 @@ class CreateGroup
   def initialize; end
 
   def call
-    @users = User.where(in_group: false)
-    @answers_width = Question.all.pluck(:weight)
+    @users = User.where(in_group: false).to_a
+    @answers_width = Question.all.pluck(:weight).to_a
     @groups = sort_all_groups
+    put_users_in_chatroom(@groups)
   end
 
   private
+
+  def put_users_in_chatroom(groups)
+    return if groups.empty?
+
+    chatroom = Chatroom.create!(name: "Groupe d'amis")
+    groups.each do |user|
+      user.update(chatroom: chatroom)
+    end
+  end
 
   def interpersonal_check(two_user_group)
     score = 0
@@ -41,6 +51,7 @@ class CreateGroup
   def sort_all_groups
     groups = check_all_group
     groups.sort_by(&:rating) unless groups.empty?
+    groups
   end
 
   def check_alone_gender(groups)
