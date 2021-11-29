@@ -44,6 +44,15 @@ body {
   margin: 0;
 }
 
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+  overscroll-behavior-y: none;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
 .tinder {
   width: 100vw;
   height: 90vh;
