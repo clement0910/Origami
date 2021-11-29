@@ -18,10 +18,11 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update(params_user)
 
-    respond_to do |format|
-      format.html { redirect_to profile_path }
-      format.text { render partial: 'users/profile', locals: { user: current_user }, formats: [:html] }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to profile_path }
+    #   format.text { render partial: 'users/profile', locals: { user: current_user }, formats: [:html] }
+    # end
+    redirect_to profile_path
   end
 
   def spotify
