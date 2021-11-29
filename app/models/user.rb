@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :answers
   belongs_to :chatroom, optional: true
   has_one_attached :photo
+  has_one :top_genre
+  has_one :top_artist
 
   validates :first_name, :last_name, :birthday, :gender, :city, presence: true
   validates :first_name, :last_name, format: { with: /\A[a-zA-Z\u00C0-\u00FF]*\z/, message: "Ce champ n'accepte que les lettres." }
