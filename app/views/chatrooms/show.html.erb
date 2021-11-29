@@ -19,14 +19,16 @@
     </div>
   </div>
 
-  <div class="conversation" id="messages", data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <% if message.user == current_user %>
+  <div class="conversation" id="messages">
+    <div class="chatarea" id="chatarea">
+      <% @chatroom.messages.each do |message| %>
+        <% if message.user == current_user %>
           <%= render 'messages/my_message', message: message %>
-      <% else %>
-         <%= render 'messages/message', message: message %>
+        <% else %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   <%= simple_form_for [ @chatroom, @message ], html: {class: 'chat-form'}, remote: true, id: 'form-message' do |f| %>
     <div class="container-inputs-stuffs">
