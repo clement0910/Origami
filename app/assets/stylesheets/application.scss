@@ -246,11 +246,10 @@ body {
 
 .calculating {
   top: 25%;
-  padding: 2.5em;
+  margin: 2.5em;
   width: 70vw;
   color: rgb(20, 20, 20);
-  max-width: 400px;
-  height: 32vh;
+  height: 35vh;
   background: rgb(255, 255, 255);
   border-radius: 8px;
   overflow: hidden;
@@ -259,10 +258,14 @@ body {
   text-align: center;
 }
 
+.inner-text {
+  margin-top: 1em;
+}
+
 .dot-windmill {
   position: absolute;
-  left: 50%;
-  top: 82%;
+  left: 48%;
+  top: 80%;
   width: 10px;
   height: 10px;
   border-radius: 5px;
