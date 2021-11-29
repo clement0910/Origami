@@ -36,7 +36,9 @@ const initTinder = () => {
 
     document.querySelectorAll('.tinder--card:not(.removed)').length;
     if (document.querySelectorAll('.tinder--card:not(.removed)').length === 1) {
+
       // element.classList.add('.calculating--card', '.calculating', '.calculating--image');
+
     }
   }
 

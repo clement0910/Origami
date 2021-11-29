@@ -1,0 +1,36 @@
+<div class="container-profile">
+  <div class="header-profile">
+    <div class="img-profile">
+      <img src="<%= cl_image_path current_user.photo.key %>" alt="profile">
+    </div>
+    <p class="name"><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+    <p class="age"><%= @age %> ans</p>
+    <%= form_for current_user do |f| %>
+      <%= f.text_field :description, class: 'description', placeholder: 'Description' %>
+  </div>
+
+  <div class="item">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 svg-icon photo-icon" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+    </svg>
+
+    <%= f.text_field :job, label: false, placeholder: 'Job', class: 'flex flex-wrap content-center'%>
+<!--    <span class="flex flex-wrap content-center">Job: <%#= current_user.job? ? current_user.job : 'Non spécifié'  %></span>-->
+  </div>
+  <%= link_to '/auth/spotify', style: 'text-decoration: none;' do %>
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="35" viewBox="-33.4974 -55.829 290.3108 334.974"><path d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0" fill="#191414"/></svg>
+      <span>Spotify</span>
+    </div>
+  <% end %>
+  <%= f.button :button, type: :submit, style: 'text-decoration: none;' do %>
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 svg-icon photo-icon" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+      <span>Valider</span>
+    </div>
+  <% end %>
+    <% end %>
+</div>
+<%= render 'pages/tab_bar'%>

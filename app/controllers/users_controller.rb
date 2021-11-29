@@ -8,14 +8,21 @@ class UsersController < ApplicationController
     @age -= 1 if Date.today < current_user.birthday + @age.years
   end
 
-  def update_avatar
+  def edit
+    @age = Date.today.year - current_user.birthday.year
+    @age -= 1 if Date.today < current_user.birthday + @age.years
+    @user = current_user
+  end
+
+  def update
     @user = current_user
     @user.update(params_user)
 
-    respond_to do |format|
-      format.html { redirect_to profile_path }
-      format.text { render partial: 'users/profile_avatar', locals: { user: current_user }, formats: [:html] }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to profile_path }
+    #   format.text { render partial: 'users/profile', locals: { user: current_user }, formats: [:html] }
+    # end
+    redirect_to profile_path
   end
 
   def spotify
