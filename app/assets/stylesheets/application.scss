@@ -189,7 +189,7 @@ body {
   z-index: 1000;
   position: absolute;
   transform: rotate(270deg);
-    top: 88%;
+    top: 79.5%;
     left: 22%;
     width: 120px;
     height: 120px;
@@ -200,8 +200,8 @@ body {
   z-index: 1001;
   position: absolute;
   transform: rotate(90deg);
-    top: 93%;
-    left: 78%;
+    top: 84%;
+    left: 77%;
     width: 120px;
     height: 120px;
     margin:-60px 0 0 -60px;
@@ -245,23 +245,24 @@ body {
 }
 
 .calculating {
-  padding: 2em;
-  display: inline-block;
+  top: 25%;
+  padding: 2.5em;
   width: 70vw;
   color: rgb(20, 20, 20);
   max-width: 400px;
-  height: 28vh;
+  height: 32vh;
   background: rgb(255, 255, 255);
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
+  z-index: 999;
   text-align: center;
 }
 
 .dot-windmill {
-  position: relative;
-  margin-left: 6.5em;
-  margin-top: 0.5em;
+  position: absolute;
+  left: 50%;
+  top: 78%;
   width: 10px;
   height: 10px;
   border-radius: 5px;
