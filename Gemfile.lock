@@ -124,6 +124,7 @@ GEM
       sassc (>= 1.11)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
+    geocoder (1.7.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -301,7 +302,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-validates_date
+  x86_64-darwin-21
 
 DEPENDENCIES
   active_storage_validations
@@ -315,6 +316,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass
   friendly_id (~> 5.4.0)
+  geocoder
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

@@ -67,7 +67,7 @@
                    input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity'} }%>
       <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color" id="next">Continuer</div>
     </div>
-    <div class="none" data-toggle-field-registration-target="city">
+    <div class="none" data-toggle-field-registration-target="city" data-controller="geocode">
       <progress id="file" max="100" value="62.5"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showGender" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -75,7 +75,8 @@
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
-                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity', toggle_field_registration_target: "cityin"} }%>
+                   input_html: { id: 'geocoder', class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity click->geocode#geocode', toggle_field_registration_target: "cityin"} }%>
+      <pre id="result" data-geocode-target="result"></pre>
       <div data-controller="geolocation">
         <div data-action="click->geolocation#geolocate">Trouvez-moi!</div>
         <a data-geolocation-target="link"></a>
