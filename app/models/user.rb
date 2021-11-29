@@ -31,4 +31,5 @@ class User < ApplicationRecord
   def username
     "#{first_name.downcase}#{last_name.downcase[0]}"
   end
+
 end
