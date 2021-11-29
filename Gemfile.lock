@@ -301,7 +301,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-validates_date
+  x86_64-darwin-21
 
 DEPENDENCIES
   active_storage_validations
