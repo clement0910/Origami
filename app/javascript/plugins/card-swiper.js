@@ -25,7 +25,7 @@ const initTinder = () => {
   function checkCardsEnding () {
     console.log(document.querySelectorAll('.tinder--card:not(.removed)').length);
     if (document.querySelectorAll('.tinder--card:not(.removed)').length === 1) {
-      console.log('HELLO');
+
     }
   }
 
