@@ -119,5 +119,4 @@ ActiveRecord::Schema.define(version: 2021_11_29_163012) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "questions", "themes"
-  add_foreign_key "users", "chatrooms"
 end
