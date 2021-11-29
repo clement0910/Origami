@@ -2,6 +2,8 @@ import Hammer from "hammerjs"
 
 'use strict';
 
+
+
 const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
@@ -23,8 +25,19 @@ const initTinder = () => {
   }
 
   function checkCardsEnding () {
-    console.log(document.querySelectorAll('.tinder--card:not(.removed)').length);
+
+    // var containerEndingCard = document.querySelector('.calculating--card');
+    // var endingCard = document.querySelector('.calculating')
+    // var endingImage = document.querySelector('.calculating--image')
+
+    // containerEndingCard.classList.remove();
+    // endingCard.classList.remove();
+    // endingImage.classList.remove();
+
+    document.querySelectorAll('.tinder--card:not(.removed)').length;
     if (document.querySelectorAll('.tinder--card:not(.removed)').length === 1) {
+
+      // element.classList.add('.calculating--card', '.calculating', '.calculating--image');
 
     }
   }
@@ -94,42 +107,6 @@ const initTinder = () => {
       }
     });
   });
-
-  function createButtonListener(love) {
-    return function (event) {
-      var cards = document.querySelectorAll('.tinder--card:not(.removed)');
-      var moveOutWidth = document.body.clientWidth * 1.5;
-
-      if (!cards.length) return false;
-
-      var card = cards[0];
-
-      card.classList.add('removed');
-
-      var nopeListener = createButtonListener(false);
-      var loveListener = createButtonListener(true);
-
-      if (nope) {
-        nope.addEventListener('click', nopeListener);
-      }
-      if (love) {
-        love.addEventListener('click', loveListener);
-      }
-
-      if (love) {
-        card.style.transform = 'translate(' + moveOutWidth + 'px,) rotate(-30deg)';
-        storeAnswers(card.id, true);
-        checkCardsEnding();
-      } else {
-        card.style.transform = 'translate(-' + moveOutWidth + 'px,) rotate(30deg)';
-        storeAnswers(card.id, false);
-        checkCardsEnding();
-      }
-      initCards();
-
-      event.preventDefault();
-    };
-  }
-};
+}
 
 export { initTinder }
