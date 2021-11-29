@@ -12,6 +12,9 @@ class User < ApplicationRecord
   validates :gender, inclusion: { in: %w[Homme Femme] }
   validates :first_name, :last_name, length: { minimum: 2, message: "Le champ est trop court." }
   validates :photo, attached: true, content_type: %i[png jpg jpeg]
+  validates_date :birthday, before: lambda { 18.years.ago },
+                 before_message: "must be at least 18 years old"
+
   before_save :update_name!
 
   extend FriendlyId
