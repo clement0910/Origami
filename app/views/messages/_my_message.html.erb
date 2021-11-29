@@ -1,4 +1,4 @@
-<div class="talk right">
+<div id="message-<%= message.id %>" class="message-container talk right">
   <p><%= message.content %></p>
   <%= cl_image_tag( message.user.photo.key, :width => 400, :crop => "pad") %>
 </div>

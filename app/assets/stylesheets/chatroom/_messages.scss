@@ -7,6 +7,9 @@
   justify-content: space-between;
 }
 
+.chatarea {
+  overflow: scroll;
+}
 .nav-top {
   background: #fff;
   width: 100%;
@@ -70,8 +73,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow:hidden;
   background-color: white;
+  overflow-y: scroll;
 }
 .talk {
   margin: 20px 0;
