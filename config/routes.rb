@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile'
   post '/swiper-answer', to: "answers#create_from_swiper"
 
-  resources :users, only: [:show] do
-    patch :update_avatar
-    patch :update_job
-  end
+  resources :users, only: [:show, :update, :edit]
 
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
