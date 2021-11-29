@@ -3,7 +3,10 @@ user = User.new(first_name: "admin", last_name: "admin", email: "admin@admin.fr"
 user.photo.attach(io: file, filename: 'Jeanro.jpg', content_type: 'image/jpg')
 user.save
 
+Answer.destroy_all
 Question.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 Theme.create!(name: "Personnalité")
 file = File.open('app/assets/images/template_cards/template_card_2.jpg')
 Question.create!(content:"Dîner entre amis ou sortie en boîte ?", weight: 1, theme: Theme.last).photo.attach(io: file, filename: 'template_card_2.jpg', content_type: 'image/jpg')
