@@ -301,6 +301,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+validates_date
 
 DEPENDENCIES
   active_storage_validations
@@ -339,4 +340,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.28
+   2.2.32

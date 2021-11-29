@@ -120,6 +120,30 @@ body {
   cursor: grab;
 }
 
+.calculating--cards {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-bottom: 20em;
+}
+
+.calculating {
+  padding: 2em;
+  display: inline-block;
+  width: 70vw;
+  color: rgb(20, 20, 20);
+  max-width: 400px;
+  height: 28vh;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+}
+
 .moving.tinder--card {
   transition: none;
   cursor: -webkit-grabbing;
@@ -179,4 +203,52 @@ body {
 
 .fa-remove {
   color: #CDD6DD;
+}
+
+.dot-windmill {
+  position: relative;
+  margin-left: 6.5em;
+  margin-top: 0.5em;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ffa600;
+  color: #ffa600;
+  transform-origin: 5px 15px;
+  animation: dotWindmill 2s infinite linear;
+}
+
+.dot-windmill::before, .dot-windmill::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+.dot-windmill::before {
+  left: -8.66px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ffa600;
+  color: #ffa600;
+}
+
+.dot-windmill::after {
+  left: 8.66px;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ffa600;
+  color: #ffa600;
+}
+
+@keyframes dotWindmill {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(720deg) translate3d(0, 0, 0);
+  }
 }

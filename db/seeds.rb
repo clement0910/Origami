@@ -1,5 +1,5 @@
 file = URI.open('https://www.kp-skills.com/assets/jean-romain_krupa-2c953a2da4ffdaa14ed9185359d49aca9769a8baee551a7b36768c2afa34688f.jpg')
-user = User.new(first_name: "admin", last_name: "admin", email: "admin@admin.fr", password: "admin00", gender: "homme", city: "Lyon", birthday: Date.today)
+user = User.new(first_name: "admin", last_name: "admin", email: "admin@admin.fr", password: "admin00", gender: "Homme", city: "Lyon", birthday: Date.today)
 user.photo.attach(io: file, filename: 'Jeanro.jpg', content_type: 'image/jpg')
 user.save
 
