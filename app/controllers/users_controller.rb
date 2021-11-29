@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(params_user)
-
     # respond_to do |format|
     #   format.html { redirect_to profile_path }
     #   format.text { render partial: 'users/profile', locals: { user: current_user }, formats: [:html] }
@@ -27,7 +26,9 @@ class UsersController < ApplicationController
 
   def spotify
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    @recommendations = RSpotify::Recommendations.generate(seed_genres: ['hip-hop', 'french'])
+    @user = current_user
+    @user.update(connect_spotify: true)
+    redirect_to profile_path
   end
 
   private
