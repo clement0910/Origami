@@ -1,6 +1,6 @@
 <div class="chatrooms">
-
-      <img src="<%= image_path("onglet_appleFichier 40-8.png") %>" alt="logo" class="group">
-    <p class="message">Vous n'avez pas encore de conversation pour le moment. <br> Continuez à swiper</p>
-<%= render 'pages/tab_bar'%>
+  <img src="<%= image_path("onglet_appleFichier 40-8.png") %>" alt="logo" class="group">
+  <p class="message">Vous n'avez pas encore de groupe pour le moment.<br>
+  <%= current_user.all_answered? ? 'Nous vous cherchons de nouveaux amis...' : 'Continuez à swiper' %></p>
+  <%= render 'pages/tab_bar'%>
 </div>
