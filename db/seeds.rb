@@ -15,8 +15,10 @@ user.photo.attach(io: file, filename: 'Jeanro.jpg', content_type: 'image/jpg')
 user.save
 
 Theme.create!(name: "Personnalité")
+file = File.open('app/assets/images/template_cards/template_card_-1.jpg')
+Question.create!(content:"Swipe vers la droite ou la gauche selon tes goûts ! ", weight: 0, theme: Theme.last).photo.attach(io: file, filename: 'template_card_-1.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_0.jpg')
-Question.create!(content:"Swipe vers la droite ou la gauche selon tes goûts ! ", weight: 0, theme: Theme.last).photo.attach(io: file, filename: 'template_card_0.jpg', content_type: 'image/jpg')
+Question.create!(content:"Ready ?", weight: 0, theme: Theme.last).photo.attach(io: file, filename: 'template_card_0.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_2.jpg')
 Question.create!(content:"Dîner entre amis ou sortie en boîte ?", weight: 1, theme: Theme.last).photo.attach(io: file, filename: 'template_card_2.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_1.jpg')
