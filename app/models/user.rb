@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :answers
+  belongs_to :chatroom, optional: true
   has_one_attached :photo
 
   validates :first_name, :last_name, :birthday, :gender, :city, presence: true
