@@ -111,7 +111,7 @@ body {
   display: inline-block;
   width: 90vw;
   max-width: 400px;
-  height: 75vh;
+  height: 60vh;
   border-radius: 12px;
   overflow: hidden;
   position: absolute;
@@ -162,9 +162,15 @@ body {
 .tinder--card img {
   width: 100%;
   pointer-events: none;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
 }
+
+.presentation {
+  background: white;
+  color: black;
+  padding: 10px;
+ }
 
 .tinder--card h3 {
   margin-top: 32px;
