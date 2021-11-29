@@ -85,7 +85,7 @@ const initTinder = () => {
         var endY = Math.abs(event.velocityY) * moveOutWidth;
         var toY = event.deltaY > 0 ? endY : -endY;
 
-        event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(10deg)';
+        event.target.style.transform = 'translate(' + toX * 10 + 'px, ' + (toY + event.deltaY) + 'px) rotate(10deg)';
         initCards();
       }
     });
