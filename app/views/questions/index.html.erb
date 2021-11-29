@@ -1,32 +1,33 @@
 <div class="tinder">
 
   <div class="tinder--cards">
-    <% unless current_user.all_answered? %>
-      <% @themes.each do |theme| %>
-        <% theme.questions.each do |question| %>
+    <% @themes.each do |theme| %>
+      <% theme.questions.each do |question| %>
+        <% unless question.answer.response == nil %>
           <div class="tinder--card" id="<%= question.id %>">
             <%= image_tag question.photo %>
              <div class="text--container">
               <h4> <%= question.content %></h4>
              </div>
           </div>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-<div class="calculating--cards">
-  <div class="calculating">
-    <img class="calculating--image" src='assets/anim.gif' alt="logo" width = "150px">
-      <h3>Nous calculons les affinités avec vos futurs amis...</h3>
-            <div class="col-3">
-        <div class="snippet" data-title=".dot-windmill">
-          <div class="stage">
-            <div class="dot-windmill"></div>
+  <div class="calculating--cards">
+    <div class="calculating">
+      <img class="calculating--image" src='assets/anim.gif' alt="logo" width = "150px">
+        <h3>Nous calculons les affinités avec vos futurs amis...</h3>
+              <div class="col-3">
+          <div class="snippet" data-title=".dot-windmill">
+            <div class="stage">
+              <div class="dot-windmill"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
     <div class="tinder--buttons">
       <button id="nope">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
