@@ -36,6 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
     initChatroomCable()
     initTinder()
-    //preventScroll()
+    preventScroll()
     scroll()
 });

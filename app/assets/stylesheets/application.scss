@@ -23,7 +23,10 @@ body {
   margin: 0;
   font-family: 'Quicksand Regular', sans-serif;
   background-color: #FF6F00;
-  height: max-content;
+  background: linear-gradient(117deg, rgb(255, 153, 19) 0%, rgb(255, 148, 9) 100%);
+  overflow: hidden;
+  font-family: sans-serif;
+  overscroll-behavior-y: none;
 }
 
 * {
@@ -47,6 +50,9 @@ body {
   overscroll-behavior-y: none;
 }
 
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
 .tinder {
   width: 100vw;
   height: 90vh;
@@ -94,7 +100,6 @@ body {
 
 .tinder--cards {
   flex-grow: 1;
-  padding-top: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -106,10 +111,8 @@ body {
   display: inline-block;
   width: 90vw;
   max-width: 400px;
-  height: 70vh;
-  background: #FFFFFF;
-  padding-bottom: 40px;
-  border-radius: 8px;
+  height: 75vh;
+  border-radius: 12px;
   overflow: hidden;
   position: absolute;
   top: 10vh;
@@ -118,6 +121,11 @@ body {
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
+  color: rgb(255, 255, 255);
+}
+
+.text--container {
+  margin: 0 auto;
 }
 
 .calculating--cards {
@@ -154,7 +162,7 @@ body {
 .tinder--card img {
   width: 100%;
   pointer-events: none;
-  height: 70%;
+  height: 80%;
   object-fit: cover;
 }
 
@@ -175,7 +183,7 @@ body {
 .tinder--buttons {
   flex: 0 0 100px;
   text-align: center;
-  padding-top: 20px;
+  padding-bottom: 12.5%;
 }
 
 .tinder--buttons button {
@@ -205,6 +213,30 @@ body {
   color: #CDD6DD;
 }
 
+.calculating--cards {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-bottom: 20em;
+}
+
+.calculating {
+  padding: 2em;
+  display: inline-block;
+  width: 70vw;
+  color: rgb(20, 20, 20);
+  max-width: 400px;
+  height: 28vh;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+}
+
 .dot-windmill {
   position: relative;
   margin-left: 6.5em;
@@ -212,8 +244,8 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #ffa600;
-  color: #ffa600;
+  background-color: #FFA600;
+  color: #FFA600;
   transform-origin: 5px 15px;
   animation: dotWindmill 2s infinite linear;
 }
@@ -230,18 +262,17 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #ffa600;
-  color: #ffa600;
+  background-color: #FFA600;
+  color: #FFA600;
 }
-
 .dot-windmill::after {
   left: 8.66px;
   top: 15px;
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #ffa600;
-  color: #ffa600;
+  background-color: #FFA600;
+  color: #FFA600;
 }
 
 @keyframes dotWindmill {
@@ -252,3 +283,9 @@ body {
     transform: rotateZ(720deg) translate3d(0, 0, 0);
   }
 }
+
+.red {
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
