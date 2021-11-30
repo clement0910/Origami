@@ -2,9 +2,6 @@ import Hammer from "hammerjs"
 
 'use strict';
 
-
-
-
 const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
@@ -28,19 +25,14 @@ const initTinder = () => {
   }
 
   function checkCardsEnding () {
-    var containerEndingCard = document.querySelector('.calculating');
+    var containerEndingCard = document.querySelector('.calculating2');
     var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
-    var arrow1 = document.querySelector('.tinder--buttons');
-    var arrow2 = document.querySelector('.tinder--buttons2');
     var partyGif = document.querySelector('.party--gif2');
 
     console.log(cardsss.length);
     if (cardsss.length === 1 || cardsss.length < 1) {
       if (containerEndingCard) {
         containerEndingCard.classList.remove('hidden');
-        arrow1.classList.add('hidden');
-        arrow2.classList.add('hidden');
-        partyGif.classList.remove('hidden');
       }
     }
   }
