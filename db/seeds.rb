@@ -1,8 +1,8 @@
 Answer.destroy_all
 Question.destroy_all
 Message.destroy_all
-Chatroom.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 
 # file = URI.open('https://www.kp-skills.com/assets/jean-romain_krupa-2c953a2da4ffdaa14ed9185359d49aca9769a8baee551a7b36768c2afa34688f.jpg')
 # user = User.new(first_name: "admin", last_name: "admin", email: "admin@admin.fr", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
