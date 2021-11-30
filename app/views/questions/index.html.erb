@@ -35,7 +35,7 @@
   <% else %>
       <div class="calculating--cards">
         <div class="calculating2 hidden">
-          <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
+          <%= image_tag('party.gif', class: 'party--gif', width: '200px')%>
             <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
             <p>Rejoignez le maintenant !</p>
             <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
