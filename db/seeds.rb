@@ -5,22 +5,22 @@ User.destroy_all
 Chatroom.destroy_all
 
 file = File.open('app/assets/images/icons/apple-icon-180x180.png')
-user = User.new(first_name: "bot", last_name: "bot", email: "bot@bot.fr", password: "bot000", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
+user = User.new(first_name: "bot", last_name: "bot", email: "bot@bot.fr", password: "bot000", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'Jeanro.png', content_type: 'image/png')
 user.save
 
 file = File.open('app/assets/images/tom.jpg')
-user = User.new(first_name: "admin", last_name: "admin", email: "tom@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
+user = User.new(first_name: "Tom", last_name: "admin", email: "tom@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'tom.jpg', content_type: 'image/jpg')
 user.save
 
 file = File.open('app/assets/images/clement.jpg')
-user = User.new(first_name: "admin", last_name: "admin", email: "clement@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
+user = User.new(first_name: "Clément", last_name: "admin", email: "clement@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'clement.jpg', content_type: 'image/jpg')
 user.save
 
 file = File.open('app/assets/images/gael.jpg')
-user = User.new(first_name: "admin", last_name: "admin", email: "gael@gmail.com", password: "admin00", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
+user = User.new(first_name: "Gael", last_name: "admin", email: "gael@gmail.com", password: "admin00", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'gael.jpg', content_type: 'image/jpg')
 user.save
 
