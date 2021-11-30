@@ -36,10 +36,12 @@ const initTinder = () => {
 
     console.log(cardsss.length);
     if (cardsss.length === 1 || cardsss.length < 1) {
-      containerEndingCard.classList.remove('hidden');
-      arrow1.classList.add('hidden');
-      arrow2.classList.add('hidden');
-      partyGif.classList.remove('hidden');
+      if (containerEndingCard) {
+        containerEndingCard.classList.remove('hidden');
+        arrow1.classList.add('hidden');
+        arrow2.classList.add('hidden');
+        partyGif.classList.remove('hidden');
+      }
     }
   }
 
