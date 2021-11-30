@@ -74,7 +74,7 @@
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
-                   input_html: { id: 'geocoder', class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity click->geocode#geocode', toggle_field_registration_target: "cityin"} }%>
+                   input_html: { id: 'address', class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity ', toggle_field_registration_target: "cityin"} }%>
       <pre id="result" data-geocode-target="result"></pre>
       <div data-controller="geolocation">
         <div data-action="click->geolocation#geolocate">Trouvez-moi!</div>
