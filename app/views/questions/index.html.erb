@@ -7,36 +7,40 @@
              <div class="text--container">
               <h4> <%= question.content %></h4>
              </div>
+          <div class="tinder--buttons">
+            <img src="assets/arrow_final.gif" alt="gif" width="70px">
+          </div>
+          <div class="tinder--buttons2">
+            <img src="assets/arrow_final.gif" alt="gif" width="70px">
+          </div>
           </div>
       <% end %>
+
+    <% if !current_user.in_group? %>
   <div class="calculating--cards">
-    <img class="party--gif2 hidden" src='assets/party_4.gif' alt="logo" width = "400px">
-    <div class="calculating hidden">
+    <img class="party--gif2" src='assets/party_4.gif' alt="logo" width = "400px">
+    <div class="calculating">
       <img class="calculating--image" src='assets/anim.gif' alt="logo" width = "150px">
-        <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
-          <div class="col-3">
-            <div class="snippet" data-title=".dot-windmill">
-              <div class="stage">
-                <div class="dot-windmill">
-              </div>
+      <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
+      <div class="col-3">
+        <div class="snippet" data-title=".dot-windmill">
+          <div class="stage">
+            <div class="dot-windmill">
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <% else %>
+      <div class="calculating--cards">
         <div class="calculating2 hidden">
           <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
             <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
             <p>Rejoignez le maintenant !</p>
-            <a href="#" class="button--in">Let's go !</a>
+            <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
         </div>
-    </div>
-  </div>
+      </div>
+    <% end %>
 </div>
-  <div class="tinder--buttons">
-    <img src="assets/arrow_final.gif" alt="gif" width="80px">
-  </div>
-  <div class="tinder--buttons2">
-    <img src="assets/arrow_final.gif" alt="gif" width="80px">
-  </div>
- </div>
 <%= render 'pages/tab_bar'%>

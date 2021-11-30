@@ -265,8 +265,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sweetalert2 (7.25.6)
-      railties (>= 3.1.0)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -336,7 +334,6 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  sweetalert2
   turbolinks (~> 5)
   tzinfo-data
   validates_timeliness (~> 6.0.0.alpha1)
