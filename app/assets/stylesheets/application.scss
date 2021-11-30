@@ -187,10 +187,10 @@ body {
 }
 
 .tinder--buttons {
-  z-index: 1000;
+  z-index: 3;
   position: absolute;
   transform: rotate(270deg);
-    top: 79.5%;
+    top: 83.5%;
     left: 22%;
     width: 120px;
     height: 120px;
@@ -198,7 +198,7 @@ body {
 }
 
 .tinder--buttons2 {
-  z-index: 1001;
+  z-index: 3;
   position: absolute;
   transform: rotate(90deg);
     top: 84%;
@@ -235,7 +235,7 @@ body {
   color: #CDD6DD;
 }
 
-.calculating--cards {
+.calculating--cards2 {
   flex-grow: 1;
   text-align: center;
   display: flex;
@@ -259,7 +259,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
-  z-index: 999;
+  z-index: 3;
   text-align: center;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
@@ -282,7 +282,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
-  z-index: 999;
+  z-index: 0;
   text-align: center;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
   padding: 1em;
