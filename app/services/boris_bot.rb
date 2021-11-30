@@ -1,10 +1,16 @@
 class BorisBot
-  def initialize(message, users, initialize = false)
+  def initialize(users, message = nil)
     @message = message
     @users = users
-    @initialize = initialize
+    if message.nil?
+      @initialize = false
+    else
+      @initialize = true
+    end
   end
 
-  def initialize_chat
+  def call
+    initialize_chat unless @initialize
   end
+
 end
