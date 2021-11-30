@@ -25,20 +25,18 @@ const initTinder = () => {
   }
 
   function checkCardsEnding () {
+    var containerEndingCard = document.querySelector('.calculating');
+    var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
+    var arrow1 = document.querySelector('.tinder--buttons');
+    var arrow2 = document.querySelector('.tinder--buttons2');
+    var partyGif = document.querySelector('.party--gif2');
 
-    // var containerEndingCard = document.querySelector('.calculating--card');
-    // var endingCard = document.querySelector('.calculating')
-    // var endingImage = document.querySelector('.calculating--image')
 
-    // containerEndingCard.classList.remove();
-    // endingCard.classList.remove();
-    // endingImage.classList.remove();
-
-    document.querySelectorAll('.tinder--card:not(.removed)').length;
-    if (document.querySelectorAll('.tinder--card:not(.removed)').length === 1) {
-
-      // element.classList.add('.calculating--card', '.calculating', '.calculating--image');
-
+    if (cardsss.length === 1 || cardsss.length < 1) {
+      containerEndingCard.classList.remove('hidden');
+      arrow1.classList.add('hidden');
+      arrow2.classList.add('hidden');
+      partyGif.classList.remove('hidden');
     }
   }
 
