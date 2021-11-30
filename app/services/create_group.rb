@@ -5,9 +5,7 @@ class CreateGroup
     @users = User.where(in_group: false).to_a
     @answers_width = Question.all.pluck(:weight).to_a
     @groups = sort_all_groups
-    if put_users_in_chatroom(@groups)
-      ap "HELLO"
-    end
+    put_users_in_chatroom(@groups)
   end
 
   private
@@ -16,22 +14,24 @@ class CreateGroup
     return if groups.empty?
 
     chatroom = Chatroom.create!(name: "Groupe d'amis")
-    groups.each do |user|
-      user.update(chatroom: chatroom)
+    group = groups[0]
+    group[:group].each do |user|
+      user.update(chatroom_id: chatroom.id)
+      user.update(in_group: true)
     end
     true
   end
 
   def interpersonal_check(two_user_group)
     score = 0
-    two_user_group[0].answers.each_with_index do |response, index|
-      score += @answers_width[index] if two_user_group[1].answers[index] == response
+    two_user_group[0].answers.each_with_index do |answer, index|
+      score += @answers_width[index] if two_user_group[1].answers[index].response == answer.response
     end
     score / @answers_width.sum
   end
 
-  def transform_group_in_rating(two_users_groups, users_group)
-    if two_users_groups == 10 && (two_users_groups.sum / two_users_groups.count) > 0.7 && check_alone_gender(users_group)
+  def transform_group_in_rating(two_users_groups, users_group, groups)
+    if two_users_groups.count == 10 && (two_users_groups.sum / two_users_groups.count) > 0.7
       groups << { rating: (two_users_groups.sum / two_users_groups.count), group: users_group }
     end
   end
@@ -46,14 +46,14 @@ class CreateGroup
 
         two_user_groups << interpersonal_score
       end
-      transform_group_in_rating(groups, users_group)
+      transform_group_in_rating(two_user_groups, users_group, groups)
     end
     groups
   end
 
   def sort_all_groups
     groups = check_all_group
-    groups.sort_by(&:rating) unless groups.empty?
+    groups.sort { |k1, k2|  k1[:rating] <=> k2[:rating] } unless groups.empty?
     groups
   end
 
