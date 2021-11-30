@@ -33,10 +33,9 @@ import { scroll } from "../plugins/init-message";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+
     initChatroomCable()
     initTinder()
     preventScroll()
     scroll()
-
-
 });
