@@ -23,27 +23,26 @@ div .input {
 
 abbr { display:none; }
 
-progress {
+select {
+  -webkit-appearance: none;
+  background: white;
+  color: #757575;
+}
+
+#myProgress {
   position: absolute;
   top: -5px;
   left: 0;
   width:100vw;
   border-radius: 0;
-  -webkit-appearance: none;
+  background-color: #ddd;
 }
 
-progress::-webkit-progress-value {
+#myBar {
+  width: 1%;
+  height: 18px;
   background: rgb(255,175,33);
   background: linear-gradient(43deg, rgba(255,175,33,1) 0%, rgba(255,111,0,1) 100%);
-}
-progress::-webkit-progress-bar {
-  background: #eee;
-}
-
-select {
-  -webkit-appearance: none;
-  background: white;
-  color: #757575;
 }
 
 .arrow-left {
