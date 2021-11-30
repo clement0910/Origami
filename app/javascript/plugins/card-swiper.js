@@ -66,14 +66,6 @@ const initTinder = () => {
       el.classList.add('moving');
     });
 
-    hammertime.on("panleft panright", function (ev) {
-      if (ev.isFinal) {
-        const yes = (ev.deltaX > 0)
-        storeAnswers(el.id, yes)
-        checkCardsEnding();
-      };
-    });
-
     hammertime.on('pan', function (event) {
       if (event.deltaX === 0) return;
       if (event.center.x === 0 && event.center.y === 0) return;
@@ -98,8 +90,16 @@ const initTinder = () => {
       event.target.classList.toggle('removed', !keep);
 
       if (keep) {
+        console.log("je suia dans le if");
         event.target.style.transform = '';
       } else {
+
+
+        console.log(event);
+        const yes = (event.deltaX > 0)
+        storeAnswers(el.id, yes)
+        checkCardsEnding();
+
         var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
         var toX = event.deltaX > 0 ? endX : -endX;
         var endY = Math.abs(event.velocityY) * moveOutWidth;
