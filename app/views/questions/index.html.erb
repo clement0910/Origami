@@ -8,39 +8,42 @@
               <h4> <%= question.content %></h4>
              </div>
           <div class="tinder--buttons">
-            <%=  image_tag("arrow_final.gif", width: '70px') %>
+            <%=  image_tag("arrow_final.gif", width: '20px') %>
           </div>
           <div class="tinder--buttons2">
-            <%=  image_tag("arrow_final.gif", width: '70px') %>
+            <%=  image_tag("arrow_final.gif", width: '20px') %>
           </div>
           </div>
       <% end %>
 
-    <% if !current_user.in_group? %>
-  <div class="calculating--cards">
-    <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
-    <div class="calculating">
-      <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
-      <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
-      <div class="col-3">
-        <div class="snippet" data-title=".dot-windmill">
-          <div class="stage">
-            <div class="dot-windmill">
+  <% if @answers == @questions.count %>
+    <div class="calculating--cards">
+      <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
+      <div class="calculating">
+        <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
+        <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
+        <div class="col-3">
+          <div class="snippet" data-title=".dot-windmill">
+            <div class="stage">
+              <div class="dot-windmill">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <% else %>
-      <div class="calculating--cards">
-        <div class="calculating2 hidden">
-          <%= image_tag('party.gif', class: 'party--gif', width: '200px')%>
-            <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
-            <p>Rejoignez le maintenant !</p>
-            <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
+  <% end %>
+
+  <% if current_user.in_group? %>
+    <div class="calculating--cards2 hidden">
+      <div class="calculating2 hidden">
+        <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
+          <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
+          <p>Rejoignez le maintenant !</p>
+          <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
         </div>
       </div>
-    <% end %>
+  <% end %>
+
 </div>
 <%= render 'pages/tab_bar'%>
