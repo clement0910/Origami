@@ -5,7 +5,9 @@ class CreateGroup
     @users = User.where(in_group: false).to_a
     @answers_width = Question.all.pluck(:weight).to_a
     @groups = sort_all_groups
-    put_users_in_chatroom(@groups)
+    if put_users_in_chatroom(@groups)
+      ap "HELLO"
+    end
   end
 
   private
@@ -17,6 +19,7 @@ class CreateGroup
     groups.each do |user|
       user.update(chatroom: chatroom)
     end
+    true
   end
 
   def interpersonal_check(two_user_group)
