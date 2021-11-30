@@ -244,6 +244,10 @@ body {
   margin-bottom: 20em;
 }
 
+.hidden {
+  display: none;
+}
+
 .calculating {
   top: 25%;
   width: 70vw;
@@ -256,10 +260,47 @@ body {
   position: absolute;
   z-index: 999;
   text-align: center;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
 
 .inner-text {
   margin-top: 1em;
+}
+
+.inner-text2 {
+  margin-top: 1em;
+}
+
+.calculating2 {
+  top: 15%;
+  width: 70vw;
+  max-width: 400px;
+  color: rgb(20, 20, 20);
+  height: 42vh;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+  padding: 1em;
+}
+
+.calculating2 p {
+  padding: 0.3em;
+  margin-bottom: 1em;
+}
+
+.button--in {
+  width: 80vw;
+  height: 40vh;
+  background: rgb(252,116,43);
+  padding: 0.4em;
+  text-decoration: none;
+  font-weight: 900;
+  color: white;
+  border-radius: 15px;
 }
 
 .dot-windmill {
