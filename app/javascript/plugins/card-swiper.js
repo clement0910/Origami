@@ -34,7 +34,7 @@ const initTinder = () => {
     var arrow2 = document.querySelector('.tinder--buttons2');
     var partyGif = document.querySelector('.party--gif2');
 
-
+    console.log(cardsss.length);
     if (cardsss.length === 1 || cardsss.length < 1) {
       containerEndingCard.classList.remove('hidden');
       arrow1.classList.add('hidden');

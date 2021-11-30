@@ -9,11 +9,9 @@ user = User.new(first_name: "admin", last_name: "admin", email: "admin@admin.fr"
 user.photo.attach(io: file, filename: 'Jeanro.jpg', content_type: 'image/jpg')
 user.save
 
+Theme.create!(name: "Questions Algorhitme")
 file = File.open('app/assets/images/template_cards/template_card_0.jpg')
 Question.create!(content:"Ready ?", weight: 0, theme: Theme.last).photo.attach(io: file, filename: 'template_card_0.jpg', content_type: 'image/jpg')
-
-Theme.create!(name: "Questions Algorhitme")
-
 file = File.open('app/assets/images/template_cards/template_card_2.jpg')
 Question.create!(content:"Dîner entre amis ou sortie en boîte ?", weight: 1, theme: Theme.last).photo.attach(io: file, filename: 'template_card_2.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_1.jpg')
@@ -52,9 +50,7 @@ file = File.open('app/assets/images/template_cards/template_card_31.jpg')
 Question.create!(content:"Football ou Tennis ?", weight: 0.6, theme: Theme.last).photo.attach(io: file, filename: 'template_card_31.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_32.jpg')
 Question.create!(content:"Esprit Compétition ou Mental de collaboration ?", weight: 0.6, theme: Theme.last).photo.attach(io: file, filename: 'template_card_32.jpg', content_type: 'image/jpg')
-
 Theme.create!(name: "Questions Bot")
-
 file = File.open('app/assets/images/template_cards/template_card_21.jpg')
 Question.create!(content:"Simple amateur de musique ou grand mélomane ?", weight: 0.4, theme: Theme.last).photo.attach(io: file, filename: 'template_card_21.jpg', content_type: 'image/jpg')
 file = File.open('app/assets/images/template_cards/template_card_23.jpg')
