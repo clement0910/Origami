@@ -4,11 +4,14 @@ import Hammer from "hammerjs"
 
 
 
+
 const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
-  var nope = document.getElementById('nope');
-  var love = document.getElementById('love');
+
+  if (allCards.length == 0) {
+    checkCardsEnding();
+  }
 
   function initCards(card, index) {
     var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
@@ -88,12 +91,9 @@ const initTinder = () => {
       event.target.classList.toggle('removed', !keep);
 
       if (keep) {
-        console.log("je suia dans le if");
         event.target.style.transform = '';
       } else {
 
-
-        console.log(event);
         const yes = (event.deltaX > 0)
         storeAnswers(el.id, yes)
         checkCardsEnding();
