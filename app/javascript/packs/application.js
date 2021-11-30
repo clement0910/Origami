@@ -2,6 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -30,6 +31,7 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { initTinder } from "../plugins/card-swiper";
 import { preventScroll } from "../plugins/prevent_scroll";
 import { scroll } from "../plugins/init-message";
+import {initAutocomplete} from "../plugins/init_autocomplete";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
     initTinder()
     preventScroll()
     scroll()
+    initAutocomplete()
 });
