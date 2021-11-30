@@ -1,13 +1,16 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
-
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "devise/index";
 @import "components/profile";
 @import "chatroom/index";
+
+/*
+ *= require sweetalert2
+ */
 
 @font-face {
   font-family: 'Quicksand Regular';
@@ -32,7 +35,9 @@ body {
 * {
   font-family: 'Quicksand Regular', sans-serif;
 }
-
+.bold {
+  font-family: 'Quicksand Bold', sans-serif;
+}
 .none {
   display: none;
 }

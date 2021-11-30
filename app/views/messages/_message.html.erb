@@ -1,5 +1,27 @@
 <div class="message-container talk left" id="message-<%= message.id %>">
       <small><%= message.user.first_name %></small>
-      <%= cl_image_tag message.user.photo.key %>
+      <div data-action="click->modal#showModal">
+        <%= cl_image_tag message.user.photo.key %>
+      </div>
       <p><%= message.content %></p>
+</div>
+<div class="modal-container none"  data-modal-target="modal">
+  <div class="modal">
+    <div class="close" data-action="click->modal#closeModal">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div class="profile-modal">
+      <%= cl_image_tag( message.user.photo.key, :width => 150, :crop => "pad") %>
+      <div>
+        <p class="bold"><%= message.user.first_name %> <%= message.user.last_name %></p>
+        <%  age = Date.today.year - current_user.birthday.year %>
+        <% age -= 1 if Date.today < current_user.birthday + age.years %>
+        <p><%= age %></p>
+      </div>
+    </div>
+    <div class="infos" >
+    </div>
+  </div>
 </div>

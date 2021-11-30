@@ -40,6 +40,7 @@ gem 'cloudinary'
 gem 'friendly_id', '~> 5.4.0'
 gem 'active_storage_validations'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
+gem 'sweetalert2'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

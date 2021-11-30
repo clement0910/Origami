@@ -130,6 +130,7 @@
   height: 90px;
   background: #f1f1f1;
   display: flex;
+  gap: 2px;
   align-items: center;
   justify-content: center;
 }
@@ -137,6 +138,7 @@
 .container-inputs-stuffs {
   background: #fff;
   display: flex;
+  gap: 0;
   width: 90%;
   height: 60px;
   border-radius: 9999px;
@@ -182,14 +184,101 @@
   background: #fff;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  width: 70px;
+  width: 60px;
   border: none;
   display: flex;
   padding-right: 5px;
   justify-content: center;
   align-items: center;
+  border-left: 1px solid #eee;
+}
+
+.bot-btn{
+  background: #fff;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  width: 60px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #eee;
 }
 
 .submit-msg-btn svg {
   width: 30px;
+  height: 30px;
+}
+
+.propositions {
+  background: #FFBB00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.proposition {
+  height: 50px;
+  width:90%;
+  margin: 10px;
+  background: #FFf;
+  border-radius: 10px;
+}
+
+//---------------------------------------------------
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 70vw;
+  height: 40vh;
+  background: white;
+  z-index: 1000;
+  opacity: 2;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.modal img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.modal .infos {
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.profile-modal {
+  background: #FFBB00;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px 30px 0 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10%;
 }
