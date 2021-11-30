@@ -8,19 +8,19 @@
               <h4> <%= question.content %></h4>
              </div>
           <div class="tinder--buttons">
-            <img src="assets/arrow_final.gif" alt="gif" width="70px">
+            <%=  image_tag("arrow_final.gif", width: '70px') %>
           </div>
           <div class="tinder--buttons2">
-            <img src="assets/arrow_final.gif" alt="gif" width="70px">
+            <%=  image_tag("arrow_final.gif", width: '70px') %>
           </div>
           </div>
       <% end %>
 
     <% if !current_user.in_group? %>
   <div class="calculating--cards">
-    <img class="party--gif2" src='assets/party_4.gif' alt="logo" width = "400px">
+    <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
     <div class="calculating">
-      <img class="calculating--image" src='assets/anim.gif' alt="logo" width = "150px">
+      <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
       <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
       <div class="col-3">
         <div class="snippet" data-title=".dot-windmill">
