@@ -7,6 +7,17 @@ export default class extends Controller {
       if ((event.keyCode === 13 || event.target.id === 'next') && this.emailinTarget.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) != null) {
         this.emailTarget.classList.toggle('none');
         this.passwordTarget.classList.toggle('none')
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 16) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
       }
       else if ((event.keyCode === 13 || event.target.id === 'next') && this.emailinTarget.classList.contains("red") === false) {
         this.emailinTarget.classList.toggle('red')
@@ -19,7 +30,18 @@ export default class extends Controller {
     showPassword(event) {
       if ((event.keyCode === 13 || event.target.id === 'next') && this.passwordinTarget.value.length >= 6 && this.passwordconfinTarget.value.length >= 6 && this.passwordinTarget.value === this.passwordconfinTarget.value) {
         this.passwordTarget.classList.toggle('none');
-        this.nameTarget.classList.toggle('none')
+        this.nameTarget.classList.toggle('none');
+        var elem = document.getElementById("myBar");
+        var width = 16;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 32) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
       }
       else if ((event.keyCode === 13 || event.target.id === 'next') && this.passwordinTarget.classList.contains("red") === false) {
         this.passwordinTarget.classList.toggle("red");
@@ -34,7 +56,18 @@ export default class extends Controller {
     showName(event) {
       if ((event.keyCode === 13 || event.target.id === 'next' ) && this.nameinTarget.value.length >= 2) {
         this.nameTarget.classList.toggle('none');
-        this.genderTarget.classList.toggle('none')
+        this.genderTarget.classList.toggle('none');
+        var elem = document.getElementById("myBar");
+        var width = 32;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 48) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
       }
       else if (event.keyCode === 13 || event.target.id === 'next') {
         this.nameinTarget.classList.toggle("red");
@@ -47,7 +80,18 @@ export default class extends Controller {
     showGender(event) {
       if (event.keyCode === 13 || event.target.id === 'next') {
         this.genderTarget.classList.toggle('none');
-        this.cityTarget.classList.toggle('none')
+        this.cityTarget.classList.toggle('none');
+        var elem = document.getElementById("myBar");
+        var width = 48;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= (64)) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
       }
     }
 
@@ -55,6 +99,17 @@ export default class extends Controller {
       if (event.keyCode === 13 || event.target.id === 'next') {
             this.cityTarget.classList.toggle('none');
             this.birthdayTarget.classList.toggle('none');
+            var elem = document.getElementById("myBar");
+            var width = (64);
+            var id = setInterval(frame, 10);
+            function frame() {
+              if (width >= (80)) {
+                clearInterval(id);
+              } else {
+                width++;
+                elem.style.width = width + "%";
+              }
+            }
         }
       if (event.keyCode > 0 && this.cityinTarget.value.length >= 2) {
         this.citybutTarget.classList = 'btn btn-color';
@@ -65,6 +120,17 @@ export default class extends Controller {
       if (event.keyCode === 13 || event.target.id === 'next') {
           this.birthdayTarget.classList.toggle('none');
           this.photoTarget.classList.toggle('none');
+          var elem = document.getElementById("myBar");
+          var width = (80);
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (width >= (90)) {
+              clearInterval(id);
+            } else {
+              width++;
+              elem.style.width = width + "%";
+            }
+          }
         }
     }
     showPhoto(event) {
@@ -72,6 +138,17 @@ export default class extends Controller {
             this.birthdayTarget.classList.toggle('none');
             this.photoTarget.classList.toggle('none');
             this.submitTarget.disabled = false;
+            var elem = document.getElementById("myBar");
+            var width = (80);
+            var id = setInterval(frame, 10);
+            function frame() {
+              if (width >= (90)) {
+                clearInterval(id);
+              } else {
+                width++;
+                elem.style.width = width + "%";
+              }
+            }
         }
     }
 }

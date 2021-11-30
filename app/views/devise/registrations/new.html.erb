@@ -1,10 +1,13 @@
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
 <div data-controller="toggle-field-registration" class="form-registration">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <div class="email" data-toggle-field-registration-target="email">
-      <progress id="file" max="100" value="12.5"></progress>
       <%= link_to root_path  do %>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -20,7 +23,6 @@
       <div data-toggle-field-registration-target="emailbut" data-action="click->toggle-field-registration#showEmail" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="password none" data-toggle-field-registration-target="password">
-      <progress id="file" max="100" value="25"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showEmail" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -39,7 +41,6 @@
       <div data-toggle-field-registration-target="passwordbut" data-action="click->toggle-field-registration#showPassword" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="name">
-      <progress id="file" max="100" value="37.5"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showPassword" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -54,7 +55,6 @@
       <div data-toggle-field-registration-target="namebut" data-action="click->toggle-field-registration#showName" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="gender">
-      <progress id="file" max="100" value="50"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showName" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -68,7 +68,6 @@
       <div data-toggle-field-registration-target="genderbut" data-action="click->toggle-field-registration#showGender" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="city" data-controller="geocode">
-      <progress id="file" max="100" value="62.5"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showGender" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -84,7 +83,6 @@
       <div data-toggle-field-registration-target="citybut" data-action="click->toggle-field-registration#showCity" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="birthday">
-      <progress id="file" max="100" value="75"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showCity" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
@@ -98,7 +96,6 @@
        <div data-toggle-field-registration-target="birthdaybut" data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
-      <progress id="file" max="100" value="87.5"></progress>
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showBirthday" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
