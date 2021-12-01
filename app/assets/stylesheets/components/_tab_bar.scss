@@ -1,5 +1,5 @@
 .menu {
-  padding:0.5rem;
+  height: 8vh;
   background-color: #fff;
   width: 100vw;
   display: flex;
@@ -7,6 +7,8 @@
   box-shadow: 0 10px 25px 0 rgba(#000, 0.075);
   position: fixed;
   bottom: 0;
+  align-items: flex-start;
+  padding-top: 0.5rem;
 }
 
 .link {
