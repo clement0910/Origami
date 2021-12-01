@@ -53,7 +53,6 @@
   color: gray;
 }
 
-
 .age {
   color: var(--gray-color);
   text-align: center;
@@ -74,4 +73,24 @@
 
 .arrow {
  margin-left: auto;
+}
+
+.container--triple{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.button--triple--flex {
+  font-size: large;
+  background-color: #8993FE;
+  border-radius: 10px;
+  padding: 0.4em;
+  text-align: center;
+  color: white;
+}
+
+.description {
+  font-size: large;
+  font-weight: 900;
 }
