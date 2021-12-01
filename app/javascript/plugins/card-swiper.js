@@ -29,7 +29,6 @@ const initTinder = () => {
     var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
     var partyGif = document.querySelector('.party--gif2');
 
-    console.log(cardsss.length);
     if (cardsss.length === 1 || cardsss.length < 1) {
       if (containerEndingCard) {
         containerEndingCard.classList.remove('hidden');

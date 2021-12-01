@@ -31,7 +31,7 @@
                   required: true,
                   placeholder: 'Mot de passe',
                   label: '',
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password",  class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPassword', toggle_field_registration_target: "passwordin"}} %>
       <%= f.input :password_confirmation,
                   required: true,
@@ -86,13 +86,16 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showCity" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
-      <%= f.input  :birthday,
-                   placeholder: 'Anniversaire',
-                   label: '',
-                   :as => :date, :start_year => Date.today.year - 90,
-                   :end_year => Date.today.year - 18,
-                   :order => [:day, :month, :year],
-                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPhoto'} }%>
+      <%= f.input :birthday,
+                   # label: '',
+                   # :as => :date, :start_year => Date.today.year - 90,
+                   # :end_year => Date.today.year - 18,
+                   # :order => [:day, :month, :year],
+                  start_year: Date.today.year - 30,
+                   label: 'Date de naissance',
+                    as: :date,
+                    html5: true,
+                   input_html: { autocomplete: 'bday', class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPhoto'}}%>
        <div data-toggle-field-registration-target="birthdaybut" data-action="click->toggle-field-registration#showPhoto" class="btn btn-color" id="next">Continuer</div>
     </div>
     <div class="none" data-toggle-field-registration-target="photo">
