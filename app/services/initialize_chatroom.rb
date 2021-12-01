@@ -34,7 +34,7 @@ class InitializeChatroom
     user_group.each do |user|
       users += "#{user.first_name}, "
     end
-    user_group.reverse.sub(',', 'and').reverse
+    users_group.reverse.sub(',', 'and').reverse
   end
 
   def create_message(content_msg)
