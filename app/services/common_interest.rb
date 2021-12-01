@@ -12,7 +12,7 @@ class CommonInterest
 
   def get_questions_theme
     questions_id = []
-    questions = Theme.find_by_name("Questions Bot").questions
+    questions = Question.all
     questions.each do |question|
       questions_id << question.id
     end
@@ -26,7 +26,9 @@ class CommonInterest
       @groups.each do |user|
         tab << user.answers.find_by(question_id: question_id).response
       end
-      common_answers << Question.find(question_id) if tab.uniq.size == 1
+      if tab.uniq.size == 1
+        common_answers << { question: Question.find(question_id), bool: tab[0] }
+      end
     end
     common_answers
   end
