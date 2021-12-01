@@ -2,25 +2,13 @@ class CreateGroup
   def initialize; end
 
   def call
-    @users = User.where(in_group: false).to_a
+    @users = User.where(in_group: false).where('bot != ?', 'true').to_a
     @answers_width = Question.all.pluck(:weight).to_a
     @groups = sort_all_groups
-    put_users_in_chatroom(@groups)
+    InitializeChatroom.new(@groups[0]).call unless @groups.empty?
   end
 
   private
-
-  def put_users_in_chatroom(groups)
-    return if groups.empty?
-
-    group = groups[0]
-    chatroom = Chatroom.create!(name: "Groupe d'amis", rating: group[:rating])
-    group[:group].each do |user|
-      user.update(chatroom_id: chatroom.id)
-      user.update(in_group: true)
-    end
-    InitializeChatroom.new(group[:group]).call
-  end
 
   def interpersonal_check(two_user_group)
     score = 0

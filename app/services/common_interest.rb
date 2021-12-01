@@ -1,6 +1,6 @@
 class CommonInterest
   def initialize(groups)
-    @groups = groups
+    @groups = groups.reject { |group| group[:bot] == true }
   end
 
   def call
