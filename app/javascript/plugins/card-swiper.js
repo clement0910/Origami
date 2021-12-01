@@ -6,6 +6,7 @@ const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
 
+  if (!tinderContainer) return
   var currentUserId = tinderContainer.dataset.userId
 
   if (allCards.length === 0 || allCards.length <= 1) {
@@ -51,7 +52,59 @@ const initTinder = () => {
 
   }
 
+  async function userInGroup() {
+    const url = `/users/${currentUserId}/in-group`;
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    });
+    if (response.status == 200) {
+      const group = await response.json()
+      return group
+    }
+    return false
+  }
+
+  function toggleAlgoStart() {
+    console.log("salut les moumous");
+    const containerStartingCard = document.querySelector('.calculating');
+    const containerStart = document.querySelector('.calculating--cards');
+
+    containerStartingCard.classList.remove('hidden');
+    containerStart.classList.remove('hidden');
+  }
+
+  function toggleAlgoEnd(usersInGroup) {
+    console.log(usersInGroup);
+    const containerEndingCard = document.querySelector('.calculating2');
+    const containerEnd = document.querySelector('.calculating--cards2');
+    const users = document.querySelector('.users')
+
+    users.classList.remove('hidden');
+    containerEndingCard.classList.remove('hidden');
+    containerEnd.classList.remove('hidden');
+  }
+
+
+  const endingWorflow = () => {
+    if (checkCardsEnding()) {
+      const interval = setInterval(async () => {
+        const inGroup = await userInGroup();
+        if (inGroup.in_group !== false) {
+          console.log("ingroup");
+          clearInterval(interval)
+          toggleAlgoEnd(inGroup.users_in_group)
+        } else { toggleAlgoStart() }
+      }, 1000)
+    }
+
+  }
+
   initCards();
+  endingWorflow()
 
   // Methode dans controller Users qui dit si il est dans un grp et qui renvoie du JSON
   // Quand checkCardsEnding renvoie true lancer la boucle qui fetch la méthode dans Users
@@ -76,40 +129,6 @@ const initTinder = () => {
       }
     });
 
-    async function userInGroup() {
-      const url = `/users/${currentUserId}/in-group`;
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-      });
-      if (response.status == 200) {
-        const { in_group } = await response.json()
-        return in_group
-      }
-      return false
-    }
-
-    function toggleAlgoStart() {
-      console.log("salut les moumous");
-      const containerStartingCard = document.querySelector('.calculating');
-      const containerStart = document.querySelector('.calculating--cards');
-
-      containerStartingCard.classList.remove('hidden');
-      containerStart.classList.remove('hidden');
-    }
-
-    function toggleAlgoEnd() {
-      console.log("coucou les zouzous");
-      const containerEndingCard = document.querySelector('.calculating2');
-      const containerEnd = document.querySelector('.calculating--cards2');
-
-      containerEndingCard.classList.remove('hidden');
-      containerEnd.classList.remove('hidden');
-    }
-
     hammertime.on('panend', function (event) {
       el.classList.remove('moving');
       tinderContainer.classList.remove('tinder_love');
@@ -128,23 +147,7 @@ const initTinder = () => {
 
         storeAnswers(el.id, yes)
 
-        if (checkCardsEnding()) {
-          const interval = setInterval(async () => {
-          const inGroup = await userInGroup();
-          console.log(inGroup);
-          if (inGroup === true) {
-            console.log("ingroup");
-            clearInterval(interval)
-            toggleAlgoEnd()}}, 1000)
-        }
-
-        if (!checkCardsEnding()) {
-          const interval2 = setInterval(async () => {
-          const inGroup2 = await userInGroup();
-          if (inGroup2 === false) {
-            console.log("not ingroup");
-            toggleAlgoStart()}}, 1000)
-        }
+        endingWorflow()
 
         var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
         var toX = event.deltaX > 0 ? endX : -endX;

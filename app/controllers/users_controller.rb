@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def in_group?
     @user = User.find(params[:id])
-    render json: { in_group: @user.in_group? }.to_json
+    render json: { in_group: @user.in_group?, users_in_group: @user.chatroom ? @user.chatroom.users : nil }.to_json
   end
 
   private

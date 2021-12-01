@@ -245,16 +245,9 @@ body {
   background: rgb(255, 255, 255);
   border-radius: 8px;
   overflow: hidden;
-  position: absolute;
   z-index: 3;
   text-align: center;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
-}
-
-.party--gif {
-  z-index: 0;
-  top: 25%;
-  right: 0%;
 }
 
 .inner-text {
@@ -266,36 +259,50 @@ body {
 }
 
 .calculating2 {
-  top: 12%;
-  width: 70vw;
+  top: 15%;
+  width: 80%;
   max-width: 400px;
   color: rgb(20, 20, 20);
-  height: 60vh;
+  height: 70%;
   background: rgb(255, 255, 255);
-  border-radius: 8px;
-  overflow: hidden;
   position: absolute;
-  z-index: 0;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
-  padding: 1em;
 }
 
 .calculating2 p {
-  padding: 0.3em;
+  padding: 1em;
   margin-bottom: 1em;
 }
 
 .button--in {
-  z-index: 1;
-  width: 80vw;
-  height: 40vh;
-  background: rgb(252,116,43);
-  padding: 0.4em;
+  position: absolute;
+  top: 87.5%;
+  left: 38%;
+  z-index: 5;
+  background: rgb(60, 0, 201);
+  padding: 0.6em;
   text-decoration: none;
   font-weight: 900;
   color: white;
   border-radius: 15px;
+}
+
+.button--in:hover{
+background: rgb(252,116,43);
+background: linear-gradient(117deg, rgba(252,116,43,1) 17%, rgba(255,206,0,1) 50%, rgba(50,251,164,1) 85%);}
+
+.users {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.li--text{
+  margin-bottom: 2em;
 }
 
 .dot-windmill {
