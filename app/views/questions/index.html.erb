@@ -1,49 +1,56 @@
 <div class="tinder">
+    <div class="tinder--cards">
+        <% @questions.last(@questions.count - @answers).each do |question| %>
+            <div class="tinder--card" id="<%= question.id %>">
+              <%= image_tag question.photo %>
+               <div class="text--container">
+                <h4> <%= question.content %></h4>
+               </div>
+            <div class="tinder--buttons">
+              <%=  image_tag("arrow_final.gif", width: '20px') %>
+            </div>
+              <div class="tinder--buttons2">
+                <%=  image_tag("arrow_final.gif", width: '20px') %>
+              </div>
+            </div>
+        <% end %>
 
-  <div class="tinder--cards">
-      <% @questions.last(@questions.count - @answers).each do |question| %>
-          <div class="tinder--card" id="<%= question.id %>">
-            <%= image_tag question.photo %>
-             <div class="text--container">
-              <h4> <%= question.content %></h4>
-             </div>
-          <div class="tinder--buttons">
-            <%=  image_tag("arrow_final.gif", width: '20px') %>
-          </div>
-          <div class="tinder--buttons2">
-            <%=  image_tag("arrow_final.gif", width: '20px') %>
-          </div>
-          </div>
-      <% end %>
-
-  <% if @answers == @questions.count %>
-    <div class="calculating--cards">
-      <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
-      <div class="calculating">
-        <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
-        <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
-        <div class="col-3">
-          <div class="snippet" data-title=".dot-windmill">
-            <div class="stage">
-              <div class="dot-windmill">
+    <% if @answers == @questions.count %>
+      <div class="calculating--cards">
+        <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
+        <div class="calculating">
+          <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
+          <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
+          <div class="col-3">
+            <div class="snippet" data-title=".dot-windmill">
+              <div class="stage">
+                <div class="dot-windmill">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <% if current_user.in_group? %>
-    <div class="calculating--cards2 hidden">
-      <div class="calculating2 hidden">
-        <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
-          <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
-          <p>Rejoignez le maintenant !</p>
-          <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
+    <% if current_user.in_group? %>
+      <div class="calculating--cards2 hidden">
+        <div class="calculating2 hidden">
+          <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
+            <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
+            <p>Rejoignez le maintenant !</p>
+            <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
+          </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
 
+  </div>
 </div>
 <%= render 'pages/tab_bar'%>
+<!--<script type="text/javascript" charset="utf-8">
+    window.onload = function() {
+        document.addEventListener("touchmove", function (e) {
+            e.preventDefault();
+        }, {passive: false});
+    };
+</script>-->

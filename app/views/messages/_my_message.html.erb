@@ -1,6 +1,10 @@
 <div id="message-<%= message.id %>" class="message-container talk right">
   <p><%= message.content %></p>
   <div>
-    <%= cl_image_tag( message.user.photo.key, :width => 400, :crop => "pad") %>
+    <%= cl_image_tag(message.user.photo.key, :transformation=>[
+      {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+      {:radius=>"max"},
+      {:width=>200, :crop=>"scale"}
+    ])%>
   </div>
 </div>
