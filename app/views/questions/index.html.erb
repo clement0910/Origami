@@ -36,11 +36,13 @@
         <%= image_tag("party.gif", :alt => "gif fete", class: 'party--gif', :style => 'width: 150px; height: 150px') %>
           <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
           <p>Voici vos futurs compagnons sélectionnés aux petits oignons :</p>
-          <% current_user.chatroom.users.each do |user| %>
-          <div class="ul--container">
-            <li class='text--ul'><%= user.last_name %></li>
+          <div class="users hidden">
+            <% current_user.chatroom.users.each do |user| %>
+            <div class="ul--container">
+              <li class='text--ul'><%= user.last_name %></li>
+            </div>
+            <% end %>
           </div>
-          <% end %>
           <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
           </div>
           </div>
