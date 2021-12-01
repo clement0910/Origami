@@ -57,7 +57,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 40px;
   border-radius: 99em;
   position: relative;
   z-index: 1;
@@ -76,15 +76,15 @@
 }
 
 .link-icon {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   display: block;
   flex-shrink: 0;
   left: 18px;
   position: absolute;
   svg {
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
   }
 }
 
