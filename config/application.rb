@@ -14,6 +14,7 @@ module Origami
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
+    config.active_job.queue_adapter = :sidekiq
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
@@ -24,7 +25,7 @@ module Origami
     #
     RSpotify::authenticate(ENV['CLIENT_ID_SPOTIFY'], ENV['CLIENT_SECRET_SPOTIFY'])
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    
+
     config.hosts << "origami-clement0910.herokuapp.com"
     config.hosts << /.+.ngrok.io/
   end

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  require "sidekiq/web"
+    authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   devise_for :users
   root to: 'pages#home'
   post '/swiper-answer', to: "answers#create_from_swiper"

@@ -5,7 +5,7 @@ class CreateGroup
     @users = User.where(in_group: false).where('bot != ?', 'true').to_a
     @answers_width = Question.all.pluck(:weight).to_a
     @groups = sort_all_groups
-    InitializeChatroom.new(@groups[0]).call unless @groups.empty?
+    FakeJob.perform_later(@groups) unless @groups.empty?
   end
 
   private
