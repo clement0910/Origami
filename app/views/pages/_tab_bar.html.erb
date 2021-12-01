@@ -9,11 +9,13 @@
 		</span>
     <span class="link-title">Profil</span>
   <% end %>
+  <% if current_user.in_group? && current_page?(swiper_path) %>
   <%= link_to swiper_path, class: "link #{'active' if current_page?(swiper_path)}" do %>
 		<span class="link-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.15 114.16"><defs><style>.cls-1{fill:#fff;stroke:#271511;stroke-miterlimit:10;stroke-width:6px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><rect class="cls-1" x="24.2" y="16.66" width="69.45" height="96" rx="10.55"/><rect class="cls-1" x="17.73" y="10.87" width="69.45" height="96" rx="10.55" transform="matrix(0.99, -0.14, 0.14, 0.99, -7.6, 7.77)"/><rect class="cls-1" x="8.2" y="5.43" width="69.45" height="96" rx="10.55" transform="translate(-9.4 9.17) rotate(-11)"/></g></g></svg>
 		</span>
     <span class="link-title">Swipe</span>
+    <% end %>
     <% end %>
 <%= link_to chatrooms_path, class: "link #{
     if current_page?(chatrooms_path)
