@@ -1,6 +1,11 @@
 Answer.destroy_all
 Question.destroy_all
+Theme.destroy_all
 Message.destroy_all
+Artist.destroy_all
+TopArtist.destroy_all
+Genre.destroy_all
+TopGenre.destroy_all
 User.destroy_all
 Chatroom.destroy_all
 
@@ -22,6 +27,11 @@ user.save
 file = File.open('app/assets/images/gael.jpg')
 user = User.new(first_name: "Gael", last_name: "admin", email: "gael@gmail.com", password: "admin00", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'gael.jpg', content_type: 'image/jpg')
+user.save
+
+file = File.open('app/assets/images/icons/apple-icon-180x180.png')
+user = User.new(first_name: "bot", last_name: "bot", email: "bot2@bot.fr", password: "bot000", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
+user.photo.attach(io: file, filename: 'Jeanro.png', content_type: 'image/png')
 user.save
 
 Theme.create!(name: "Questions Algorithme")
