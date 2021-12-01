@@ -123,5 +123,5 @@ file = File.open('app/assets/images/template_cards/template_card_29.jpg')
 Question.create!(content:"James Bond ou Avengers", weight: 0.4, theme: Theme.last).photo.attach(io: file, filename: 'template_card_29.jpg', content_type: 'image/jpg')
 
 User.all.each { |userr| userr.update(:all_answered => true) }
-CreateGroup.new.call
 Question.all.each { |question| User.all.each { |userr| Answer.create!(question_id: question[:id], response: true, user: userr) } }
+CreateGroup.new.call

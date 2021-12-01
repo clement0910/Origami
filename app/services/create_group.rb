@@ -13,8 +13,8 @@ class CreateGroup
   def put_users_in_chatroom(groups)
     return if groups.empty?
 
-    chatroom = Chatroom.create!(name: "Groupe d'amis", rating: groups[:rating], )
     group = groups[0]
+    chatroom = Chatroom.create!(name: "Groupe d'amis", rating: group[:rating])
     group[:group].each do |user|
       user.update(chatroom_id: chatroom.id)
       user.update(in_group: true)
