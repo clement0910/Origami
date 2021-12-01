@@ -1,4 +1,4 @@
-<div class="tinder" data-user-id="<%= current_user.id %>">
+<div class="tinder" data-user-id="<%= current_user.id %>" data-chatroom-id="<%= current_user.chatroom_id %>">
   <div class="tinder--cards">
       <% @questions.last(@questions.count - @answers).each do |question| %>
           <div class="tinder--card" id="<%= question.id %>">
@@ -33,8 +33,13 @@
 
     <div class="calculating--cards2 hidden">
       <div class="calculating2 hidden">
-        <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
+        <%= image_tag("party.gif", :alt => "gif fete", class: 'party--gif') %>
           <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
+          <p>Voici vos compagnons sélectionnés aux petits oignons !</p>
+          <ul>
+          <% current_user.chatroom.users.each do |user| %>
+          <li><%= user.last_name %></li>
+          <% end %>
           <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
         </div>
       </div>

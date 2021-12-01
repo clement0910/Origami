@@ -8,7 +8,7 @@ const initTinder = () => {
 
   var currentUserId = tinderContainer.dataset.userId
 
-  if (allCards.length == 0) {
+  if (allCards.length === 0 || allCards.length <= 1) {
     checkCardsEnding();
   }
 
@@ -27,11 +27,9 @@ const initTinder = () => {
   }
 
   function checkCardsEnding () {
-    var containerEndingCard = document.querySelector('.calculating2');
     var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
 
     if (cardsss.length === 1 || cardsss.length < 1) {
-        containerEndingCard.classList.remove('hidden');
         return true
       }
       return false
@@ -95,31 +93,21 @@ const initTinder = () => {
     }
 
     function toggleAlgoStart() {
-      const containerEndingCard = document.querySelector('.calculating2');
-      const containerEnd = document.querySelector('.calculating--cards2');
-
-      containerEndingCard.classList.remove('hidden');
-      containerEnd.classList.remove('hidden');
-
-      const containerStartingCard = document.querySelector('.calculating');
-      const containerStart = document.querySelector('.calculating--cards');
-
-      containerStartingCard.classList.add('hidden');
-      containerStart.classList.add('hidden');
-    }
-
-    function toggleAlgoEnd() {
+      console.log("salut les moumous");
       const containerStartingCard = document.querySelector('.calculating');
       const containerStart = document.querySelector('.calculating--cards');
 
       containerStartingCard.classList.remove('hidden');
       containerStart.classList.remove('hidden');
+    }
 
+    function toggleAlgoEnd() {
+      console.log("coucou les zouzous");
       const containerEndingCard = document.querySelector('.calculating2');
       const containerEnd = document.querySelector('.calculating--cards2');
 
-      containerEndingCard.classList.add('hidden');
-      containerEnd.classList.add('hidden');
+      containerEndingCard.classList.remove('hidden');
+      containerEnd.classList.remove('hidden');
     }
 
     hammertime.on('panend', function (event) {
@@ -139,16 +127,23 @@ const initTinder = () => {
         const yes = (event.deltaX > 0)
 
         storeAnswers(el.id, yes)
+
         if (checkCardsEnding()) {
           const interval = setInterval(async () => {
-            const inGroup = await userInGroup();
-            if (inGroup) {
-              console.log("ingroup");
-              clearInterval(interval)
-              toggleAlgoEnd()
-            }
-            toggleAlgoStart()
-          }, 1000)
+          const inGroup = await userInGroup();
+          console.log(inGroup);
+          if (inGroup === true) {
+            console.log("ingroup");
+            clearInterval(interval)
+            toggleAlgoEnd()}}, 1000)
+        }
+
+        if (!checkCardsEnding()) {
+          const interval2 = setInterval(async () => {
+          const inGroup2 = await userInGroup();
+          if (inGroup2 === false) {
+            console.log("not ingroup");
+            toggleAlgoStart()}}, 1000)
         }
 
         var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
