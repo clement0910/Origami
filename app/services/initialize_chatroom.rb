@@ -24,17 +24,17 @@ class InitializeChatroom
 
   def initialize_question
     @question = random_botable_question
-    create_message("Message d'initiation en gros, on attend les seeds")
-    #create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
+    create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
     #create gif
   end
 
   def message_group
     users = "Hello "
-    @groups.each do |user|
+    user_group = @groups.reject { |group| group[:email] == 'bot@bot.fr' }
+    user_group.each do |user|
       users += "#{user.first_name}, "
     end
-    users.reverse.sub(',', 'and').reverse
+    user_group.reverse.sub(',', 'and').reverse
   end
 
   def create_message(content_msg)
