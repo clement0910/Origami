@@ -1,10 +1,37 @@
-<div class="chat-global" data-controller="modal">
+<div class="chat-global" data-controller="modal" id="chatGlobal">
 
   <div class="nav-top">
+    <div class="fake">
 
+    </div>
     <!-- Trigger/Open The Modal -->
     <div class="utilisateur">
       <p><%= @chatroom.name %></p>
+    </div>
+<!--    <div class="chat-infos">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>
+    </div>-->
+    <div class="dropdown">
+      <input type="checkbox" id="dropdown">
+
+      <label class="dropdown__face" for="dropdown">
+        <div class="dropdown__arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 points" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+          </svg>
+        </div>
+      </label>
+
+      <ul class="dropdown__items">
+
+        <li>🙂</li>
+        <li>😺</li>
+        <li>😽</li>
+        <li>😎</li>
+        <li>🤗</li>
+      </ul>
     </div>
 
   </div>
@@ -47,5 +74,5 @@
     <div class="proposition"></div>
     <div class="proposition"></div>
   </div>
+  <%= render 'pages/tab_bar'%>
 </div>
-<%= render 'pages/tab_bar'%>

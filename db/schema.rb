@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_220919) do
+ActiveRecord::Schema.define(version: 2021_12_01_124317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_220919) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "rating"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -96,6 +97,24 @@ ActiveRecord::Schema.define(version: 2021_11_29_220919) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "weight"
     t.index ["theme_id"], name: "index_questions_on_theme_id"
+  end
+
+  create_table "sentence_bots", force: :cascade do |t|
+    t.string "true"
+    t.string "false"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_sentence_bots_on_question_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "true"
+    t.string "false"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_tags_on_question_id"
   end
 
   create_table "themes", force: :cascade do |t|
@@ -152,6 +171,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_220919) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "questions", "themes"
+  add_foreign_key "sentence_bots", "questions"
+  add_foreign_key "tags", "questions"
   add_foreign_key "top_artists", "users"
   add_foreign_key "top_genres", "users"
   add_foreign_key "users", "chatrooms"

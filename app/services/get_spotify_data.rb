@@ -10,6 +10,7 @@ class GetSpotifyData
     @top_genre = TopGenre.create!(user_id: @user.id)
     @top_artist = TopArtist.create!(user_id: @user.id)
     create_data
+    @user.update(connect_spotify: true)
   end
 
   private

@@ -9,19 +9,21 @@
 
 .chatarea {
   overflow: scroll;
+  width: 100%;
 }
 .nav-top {
-  background: #fff;
+  background-color: #FF970F;
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(51,51,51,0.2);
+  align-items: center;
+  color: white;
 }
 
-.back {
-  padding-top: 2vh;
-  padding-left: 2vw;
+.fake {
+  width: 10vw;
 }
 
 .location {
@@ -56,13 +58,11 @@
   opacity: 0.8;
 }
 
-.logos-call {
-  width: 100px;
-  display: flex;
+.chat-infos {
+  width: 50px;
 }
-.logos-call img {
-  margin-right: 20px;
-  width: 30px
+.chat-infos svg{
+  height: 30px;
 }
 
 
@@ -76,10 +76,11 @@
   justify-content: flex-end;
   background-color: white;
   overflow-y: scroll;
+  flex-grow: 1;
 }
 .talk {
-  margin: 20px 0;
-  color: #f1f1f1;
+  margin: 20px 0 20px 5px;
+  color: #F1F1F1;
   font-size: 18px;
   width: 50%;
 }
@@ -109,7 +110,8 @@
 }
 .right p {
   margin-right: 10px;
-  background:#ffba08;
+  background: #FF970F;
+  background: linear-gradient(117deg, rgb(255, 153, 19) 0%, rgb(255, 148, 9) 100%);
 }
 .left p {
   margin-left: 15px;
@@ -239,11 +241,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .modal {
   width: 70vw;
-  height: 40vh;
+  height: 30vh;
   background: white;
   z-index: 1000;
   opacity: 2;
@@ -263,6 +266,8 @@
 
 .modal .infos {
   padding: 10px;
+  text-align: center;
+
 }
 
 .close {
@@ -274,7 +279,7 @@
 }
 
 .profile-modal {
-  background: #FFBB00;
+  background: #FF970F;
   width: 100%;
   padding: 10px;
   border-radius: 30px 30px 0 0;
@@ -283,3 +288,50 @@
   align-items: center;
   gap: 10%;
 }
+
+.dropdown {
+  position: relative;
+  width: 30px;
+  filter: url(#goo);
+
+  &__face,
+  &__items {
+    background-color: #FF970F;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__face {
+    position: relative;
+  }
+
+  &__items {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 200px;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+
+
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ .dropdown__items {
+      top: calc(100% + 25px);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+

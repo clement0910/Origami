@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   def spotify
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     @user = current_user
-    @user.update(connect_spotify: true)
     GetSpotifyData.new(@spotify_user, @user).call
     redirect_to profile_path
   end
