@@ -62,8 +62,8 @@ const initTinder = () => {
       },
     });
     if (response.status == 200) {
-      const { in_group } = await response.json()
-      return in_group
+      const group = await response.json()
+      return group
     }
     return false
   }
@@ -77,11 +77,13 @@ const initTinder = () => {
     containerStart.classList.remove('hidden');
   }
 
-  function toggleAlgoEnd() {
-    console.log("coucou les zouzous");
+  function toggleAlgoEnd(usersInGroup) {
+    console.log(usersInGroup);
     const containerEndingCard = document.querySelector('.calculating2');
     const containerEnd = document.querySelector('.calculating--cards2');
+    const users = document.querySelector('.users')
 
+    users.classList.remove('hidden');
     containerEndingCard.classList.remove('hidden');
     containerEnd.classList.remove('hidden');
   }
@@ -91,24 +93,14 @@ const initTinder = () => {
     if (checkCardsEnding()) {
       const interval = setInterval(async () => {
         const inGroup = await userInGroup();
-        console.log(inGroup);
-        if (inGroup === true) {
+        if (inGroup.in_group !== false) {
           console.log("ingroup");
           clearInterval(interval)
-          toggleAlgoEnd()
-        }
+          toggleAlgoEnd(inGroup.users_in_group)
+        } else { toggleAlgoStart() }
       }, 1000)
     }
 
-    if (!checkCardsEnding()) {
-      const interval2 = setInterval(async () => {
-        const inGroup2 = await userInGroup();
-        if (inGroup2 === false) {
-          console.log("not ingroup");
-          toggleAlgoStart()
-        }
-      }, 1000)
-    }
   }
 
   initCards();
