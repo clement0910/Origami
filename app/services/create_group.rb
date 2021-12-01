@@ -19,7 +19,7 @@ class CreateGroup
       user.update(chatroom_id: chatroom.id)
       user.update(in_group: true)
     end
-    true
+    InitializeChatroom.new(group[:group]).call
   end
 
   def interpersonal_check(two_user_group)
