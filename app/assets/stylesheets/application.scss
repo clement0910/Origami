@@ -278,7 +278,7 @@ body {
 
 .button--in {
   position: absolute;
-  top: 80%;
+  top: 87.5%;
   left: 38%;
   z-index: 5;
   background: rgb(60, 0, 201);
@@ -293,9 +293,12 @@ body {
 background: rgb(252,116,43);
 background: linear-gradient(117deg, rgba(252,116,43,1) 17%, rgba(255,206,0,1) 50%, rgba(50,251,164,1) 85%);}
 
-.ul--container {
-  font-size: large;
-  list-style: none;
+.users {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .li--text{
