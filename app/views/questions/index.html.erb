@@ -1,5 +1,4 @@
-<div class="tinder">
-
+<div class="tinder" data-user-id="<%= current_user.id %>">
   <div class="tinder--cards">
       <% @questions.last(@questions.count - @answers).each do |question| %>
           <div class="tinder--card" id="<%= question.id %>">
@@ -8,18 +7,17 @@
               <h4> <%= question.content %></h4>
              </div>
           <div class="tinder--buttons">
-            <%=  image_tag("arrow_final.gif", width: '20px') %>
+            <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
           </div>
           <div class="tinder--buttons2">
-            <%=  image_tag("arrow_final.gif", width: '20px') %>
+            <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
           </div>
-          </div>
-      <% end %>
+        </div>
+    <% end %>
 
-  <% if @answers == @questions.count %>
-    <div class="calculating--cards">
+    <div class="calculating--cards hidden">
       <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
-      <div class="calculating">
+      <div class="calculating hidden">
         <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
         <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
         <div class="col-3">
@@ -32,18 +30,14 @@
         </div>
       </div>
     </div>
-  <% end %>
 
-  <% if current_user.in_group? %>
     <div class="calculating--cards2 hidden">
       <div class="calculating2 hidden">
         <img class="party--gif" src='assets/party.gif' alt="logo" width = "200px">
           <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
-          <p>Rejoignez le maintenant !</p>
           <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
         </div>
       </div>
-  <% end %>
 
 </div>
 <%= render 'pages/tab_bar'%>

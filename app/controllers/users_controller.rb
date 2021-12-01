@@ -32,6 +32,11 @@ class UsersController < ApplicationController
     redirect_to profile_path
   end
 
+  def in_group?
+    @user = User.find(params[:id])
+    render json: { in_group: @user.in_group? }.to_json
+  end
+
   private
   def params_user
     params.require(:user).permit(:job, :photo, :description)
