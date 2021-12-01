@@ -53,7 +53,7 @@
   <%= simple_form_for [ @chatroom, @message ], html: {class: 'chat-form'}, remote: true, id: 'form-message' do |f| %>
     <div class="container-inputs-stuffs" data-bot-target="form">
       <div class="group-inp">
-        <%= f.text_field :content, label: false, placeholder: "Enter your message here", id: 'input-send'%>
+        <%= f.text_field :content, label: false, placeholder: "Message", id: 'input-send'%>
         <i class="far fa-grin-beam"></i>
       </div>
 <!--      <div class="bot-btn" data-action="click->bot#proposition">
