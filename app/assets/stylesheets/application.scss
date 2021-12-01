@@ -259,11 +259,11 @@ body {
 }
 
 .calculating2 {
-  top: 15%;
+  top: 20%;
   width: 80%;
   max-width: 400px;
   color: rgb(20, 20, 20);
-  height: 70%;
+  height: 65%;
   background: rgb(255, 255, 255);
   position: absolute;
   border-radius: 10px;
@@ -274,6 +274,13 @@ body {
 .calculating2 p {
   padding: 1em;
   margin-bottom: 1em;
+}
+
+.party--gif2 {
+  position: absolute;
+  z-index: 10;
+  top: 0%;
+  transform: rotate(180deg);
 }
 
 .button--in {
