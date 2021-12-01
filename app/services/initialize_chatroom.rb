@@ -47,7 +47,7 @@ class InitializeChatroom
 
     user_group = @groups[:group].reject { |group| group[:bot] == true }
     user_group.each { |user| array << user.first_name }
-    "Hello, #{array.first(array.size - 1).join(', ')} et #{array[-1]}."
+    "Hello, #{array[0...-1].join(', ')} et #{array[-1]}."
   end
 
   def create_message(content_msg)

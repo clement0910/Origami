@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      redirect_to swiper_path
+      redirect_to current_user.in_group? ? chatrooms_path : swiper_path
     end
   end
 end
