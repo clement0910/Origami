@@ -37,11 +37,24 @@
           <h3 class="inner-text2">Félicitations ! Vous avez trouvé un groupe d'amis !</h3>
           <p>Voici vos futurs compagnons sélectionnés aux petits oignons :</p>
           <div class="users hidden">
-            <% current_user.chatroom.users.each do |user| %>
-            <div class="ul--container">
-              <li class='text--ul'><%= user.last_name %></li>
-            </div>
+            <div class="img--container">
+            <% current_user.chatroom.users.first(3).each do |user| %>
+              <%= cl_image_tag(user.photo.key, :transformation=>[
+          {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+          {:radius=>"max"},
+          {:width=>70, :crop=>"scale"}
+        ])%>
             <% end %>
+            </div>
+            <div class="img--container2">
+            <% current_user.chatroom.users.last(2).each do |user| %>
+              <%= cl_image_tag(user.photo.key, :transformation=>[
+          {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+          {:radius=>"max"},
+          {:width=>70, :crop=>"scale"}
+        ])%>
+            <% end %>
+            </div>
           </div>
           <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
           </div>
