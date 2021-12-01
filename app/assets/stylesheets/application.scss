@@ -259,16 +259,16 @@ body {
 }
 
 .calculating2 {
-  top: 20%;
-  width: 80%;
   max-width: 400px;
   color: rgb(20, 20, 20);
-  height: 65%;
+  height: auto;
   background: rgb(255, 255, 255);
-  position: absolute;
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .calculating2 p {
@@ -283,22 +283,21 @@ body {
   transform: rotate(180deg);
 }
 
-.button--in {
-  position: absolute;
-  top: 87.5%;
-  left: 38%;
-  z-index: 5;
-  background: rgb(60, 0, 201);
-  padding: 0.6em;
-  text-decoration: none;
-  font-weight: 900;
-  color: white;
-  border-radius: 15px;
+.container-button {
+  height: 100px;
+  padding-top: 30px;
 }
 
-.button--in:hover{
-background: rgb(252,116,43);
-background: linear-gradient(117deg, rgba(252,116,43,1) 17%, rgba(255,206,0,1) 50%, rgba(50,251,164,1) 85%);}
+.button--in {
+  background: #8A93FF;
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .users {
   display: flex;
