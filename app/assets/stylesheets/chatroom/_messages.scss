@@ -82,7 +82,7 @@
   margin: 20px 0 20px 5px;
   color: #F1F1F1;
   font-size: 18px;
-  width: 50%;
+  width: 70%;
 }
 .talk img {
   width: 50px;
@@ -100,6 +100,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .left {
   margin-right: auto;
@@ -107,6 +108,7 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  margin-left: 10px;
 }
 .right p {
   margin-right: 10px;
@@ -114,7 +116,7 @@
   background: linear-gradient(117deg, rgb(255, 153, 19) 0%, rgb(255, 148, 9) 100%);
 }
 .left p {
-  margin-left: 15px;
+  margin-left: 10px;
   background: rgb(216,216,216);
   color: #000;
 }
@@ -123,6 +125,11 @@
   color: #000;
   left: 80px;
   top: -20px;
+}
+
+.bot-msg p{
+  background: #8A93FF;
+  color: #F1F1F1;
 }
 
 /* **********FORM********** */
@@ -167,6 +174,10 @@
   border: none;
   margin-left: 20px;
 }
+.group-inp input:focus {
+  outline: none;
+}
+
 
 .files-logo-cont {
   border-top-left-radius: 25px;
