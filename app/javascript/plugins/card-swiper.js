@@ -6,7 +6,9 @@ const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
 
-  if (allCards.length == 0) {
+  var currentUserId = tinderContainer.dataset.userId
+
+  if (allCards.length === 0 || allCards.length <= 1) {
     checkCardsEnding();
   }
 
@@ -25,18 +27,13 @@ const initTinder = () => {
   }
 
   function checkCardsEnding () {
-    var containerEndingCard = document.querySelector('.calculating2');
     var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
-    var partyGif = document.querySelector('.party--gif2');
 
     if (cardsss.length === 1 || cardsss.length < 1) {
-      if (containerEndingCard) {
-        containerEndingCard.classList.remove('hidden');
+        return true
       }
-    }
+      return false
   }
-
-  initCards();
 
   function storeAnswers(questionId, answer) {
     const csrfToken = document.querySelector("[name='csrf-token']").content
@@ -51,8 +48,14 @@ const initTinder = () => {
       },
       body: JSON.stringify({question_id: questionId, answer: answer})
     });
+
   }
 
+  initCards();
+
+  // Methode dans controller Users qui dit si il est dans un grp et qui renvoie du JSON
+  // Quand checkCardsEnding renvoie true lancer la boucle qui fetch la méthode dans Users
+  // Si User_in_group true on stopp la boucle et on toggle hidden div
   allCards.forEach(function (el) {
     var hammertime = new Hammer(el);
 
@@ -73,6 +76,40 @@ const initTinder = () => {
       }
     });
 
+    async function userInGroup() {
+      const url = `/users/${currentUserId}/in-group`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+      if (response.status == 200) {
+        const { in_group } = await response.json()
+        return in_group
+      }
+      return false
+    }
+
+    function toggleAlgoStart() {
+      console.log("salut les moumous");
+      const containerStartingCard = document.querySelector('.calculating');
+      const containerStart = document.querySelector('.calculating--cards');
+
+      containerStartingCard.classList.remove('hidden');
+      containerStart.classList.remove('hidden');
+    }
+
+    function toggleAlgoEnd() {
+      console.log("coucou les zouzous");
+      const containerEndingCard = document.querySelector('.calculating2');
+      const containerEnd = document.querySelector('.calculating--cards2');
+
+      containerEndingCard.classList.remove('hidden');
+      containerEnd.classList.remove('hidden');
+    }
+
     hammertime.on('panend', function (event) {
       el.classList.remove('moving');
       tinderContainer.classList.remove('tinder_love');
@@ -88,8 +125,26 @@ const initTinder = () => {
       } else {
 
         const yes = (event.deltaX > 0)
+
         storeAnswers(el.id, yes)
-        checkCardsEnding();
+
+        if (checkCardsEnding()) {
+          const interval = setInterval(async () => {
+          const inGroup = await userInGroup();
+          console.log(inGroup);
+          if (inGroup === true) {
+            console.log("ingroup");
+            clearInterval(interval)
+            toggleAlgoEnd()}}, 1000)
+        }
+
+        if (!checkCardsEnding()) {
+          const interval2 = setInterval(async () => {
+          const inGroup2 = await userInGroup();
+          if (inGroup2 === false) {
+            console.log("not ingroup");
+            toggleAlgoStart()}}, 1000)
+        }
 
         var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
         var toX = event.deltaX > 0 ? endX : -endX;

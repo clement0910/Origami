@@ -138,20 +138,6 @@ body {
   margin-bottom: 20em;
 }
 
-.calculating {
-  padding: 2em;
-  display: inline-block;
-  width: 70vw;
-  color: rgb(20, 20, 20);
-  max-width: 400px;
-  height: 28vh;
-  background: rgb(255, 255, 255);
-  border-radius: 8px;
-  overflow: hidden;
-  position: absolute;
-  text-align: center;
-}
-
 .moving.tinder--card {
   transition: none;
   cursor: -webkit-grabbing;
@@ -250,7 +236,8 @@ body {
 }
 
 .calculating {
-  top: 25%;
+  padding: 2.5em;
+  top: 32%;
   width: 70vw;
   max-width: 400px;
   color: rgb(20, 20, 20);
@@ -264,6 +251,12 @@ body {
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
 
+.party--gif {
+  z-index: 0;
+  top: 25%;
+  right: 0%;
+}
+
 .inner-text {
   margin-top: 1em;
 }
@@ -273,11 +266,11 @@ body {
 }
 
 .calculating2 {
-  top: 15%;
+  top: 12%;
   width: 70vw;
   max-width: 400px;
   color: rgb(20, 20, 20);
-  height: 42vh;
+  height: 60vh;
   background: rgb(255, 255, 255);
   border-radius: 8px;
   overflow: hidden;
@@ -294,6 +287,7 @@ body {
 }
 
 .button--in {
+  z-index: 1;
   width: 80vw;
   height: 40vh;
   background: rgb(252,116,43);
