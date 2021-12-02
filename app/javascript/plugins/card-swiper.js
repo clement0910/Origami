@@ -2,6 +2,8 @@ import Hammer from "hammerjs"
 
 'use strict';
 
+let fetchGroup = false
+
 const initTinder = () => {
   var tinderContainer = document.querySelector('.tinder');
   var allCards = document.querySelectorAll('.tinder--card');
@@ -30,10 +32,10 @@ const initTinder = () => {
   function checkCardsEnding () {
     var cardsss = document.querySelectorAll('.tinder--card:not(.removed)');
 
-    if (cardsss.length === 1 || cardsss.length < 1) {
+    if (cardsss.length < 1) {
         return true
       }
-      return false
+    return false
   }
 
   function storeAnswers(questionId, answer) {
@@ -72,20 +74,29 @@ const initTinder = () => {
     const containerStartingCard = document.querySelector('.calculating');
     const containerStart = document.querySelector('.calculating--cards');
 
+    fetchGroup = true
+
     containerStartingCard.classList.remove('hidden');
     containerStart.classList.remove('hidden');
   }
 
-  function toggleAlgoEnd(usersInGroup) {
+  function toggleAlgoEnd() {
+    console.log('ingroup');
     const containerEndingCard = document.querySelector('.calculating2');
     const containerEnd = document.querySelector('.calculating--cards2');
     const users = document.querySelector('.users')
+    const containerStartingCard = document.querySelector('.calculating');
+    const containerStart = document.querySelector('.calculating--cards');
+
+
+    containerStartingCard.classList.add('hidden');
+    containerStart.classList.add('hidden');
 
     users.classList.remove('hidden');
     containerEndingCard.classList.remove('hidden');
     containerEnd.classList.remove('hidden');
+    window.location.reload()
   }
-
 
   const endingWorflow = () => {
     if (checkCardsEnding()) {
@@ -93,15 +104,15 @@ const initTinder = () => {
         const inGroup = await userInGroup();
         if (inGroup.in_group !== false) {
           clearInterval(interval)
-          toggleAlgoEnd(inGroup.users_in_group)
+          toggleAlgoEnd()
         } else { toggleAlgoStart() }
       }, 1000)
     }
-
   }
 
   initCards();
-  endingWorflow()
+  if (document.querySelector('.calculating--cards2').classList.contains('hidden'))
+    endingWorflow()
 
   // Methode dans controller Users qui dit si il est dans un grp et qui renvoie du JSON
   // Quand checkCardsEnding renvoie true lancer la boucle qui fetch la méthode dans Users

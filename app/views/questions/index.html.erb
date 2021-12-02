@@ -39,13 +39,13 @@
             <% end %>
           </div>
         </div>
-    <% if current_user.chatroom != nil %>
-    <div class="calculating--cards2 hidden">
+    <div class="calculating--cards2 <%= 'hidden' unless current_user.in_group %>">
       <%= image_tag("party_3.gif", :alt => "gif fete", class: 'party--gif2', :style => 'width: 400px; height: 400px') %>
       <div class="calculating2 hidden">
         <h1 class="inner-text2">Félicitations ! <br> Vous avez trouvé un groupe d'amis !</h1>
         <p>Voici vos futurs compagnons sélectionnés aux petits oignons :</p>
         <div class="users hidden">
+          <% unless current_user.chatroom.nil? %>
           <div class="img--container">
             <% current_user.chatroom.users.first(3).each do |user| %>
               <%= cl_image_tag(user.photo.key, :transformation=>[
@@ -64,13 +64,13 @@
               ])%>
             <% end %>
           </div>
+            <% end %>
         </div>
         <div class="container-button">
           <%= link_to "Let's go !", chatrooms_path, class:"button--in" %>
         </div>
       </div>
     </div>
-      <% end  %>
   </div>
 </div>
 <%= render 'pages/tab_bar'%>
