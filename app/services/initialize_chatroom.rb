@@ -33,9 +33,9 @@ class InitializeChatroom
 
   def initialize_chat
     create_message("Notre algorithme vous à ajouté au groupe !")
-    sleep 30
+    sleep 5
     create_message(message_group)
-    sleep 30
+    sleep 5
   end
 
   def initialize_question
