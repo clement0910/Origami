@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-
+    <% if current_user.chatroom != nil %>
     <div class="calculating--cards2 hidden">
       <%= image_tag("party_3.gif", :alt => "gif fete", class: 'party--gif2', :style => 'width: 400px; height: 400px') %>
       <div class="calculating2 hidden">
@@ -61,6 +61,7 @@
         </div>
       </div>
     </div>
+      <% end  %>
   </div>
 </div>
 <%= render 'pages/tab_bar'%>
