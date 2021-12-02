@@ -69,7 +69,6 @@ const initTinder = () => {
   }
 
   function toggleAlgoStart() {
-    console.log("salut les moumous");
     const containerStartingCard = document.querySelector('.calculating');
     const containerStart = document.querySelector('.calculating--cards');
 
@@ -78,7 +77,6 @@ const initTinder = () => {
   }
 
   function toggleAlgoEnd(usersInGroup) {
-    console.log(usersInGroup);
     const containerEndingCard = document.querySelector('.calculating2');
     const containerEnd = document.querySelector('.calculating--cards2');
     const users = document.querySelector('.users')
@@ -94,7 +92,6 @@ const initTinder = () => {
       const interval = setInterval(async () => {
         const inGroup = await userInGroup();
         if (inGroup.in_group !== false) {
-          console.log("ingroup");
           clearInterval(interval)
           toggleAlgoEnd(inGroup.users_in_group)
         } else { toggleAlgoStart() }

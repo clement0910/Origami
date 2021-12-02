@@ -1,13 +1,13 @@
 <div class="message-container talk left <%= 'bot-msg' if message.user.bot == true %>" id="message-<%= message.id %>">
-      <small><%= message.user.first_name %></small>
-      <div data-action="click->modal#showModal">
-        <%= cl_image_tag(message.user.photo.key, :transformation=>[
-          {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
-          {:radius=>"max"},
-          {:width=>200, :crop=>"scale"}
-        ])%>
-      </div>
-      <p><%= message.content %></p>
+  <small><%= message.user.first_name %></small>
+  <div data-action="click->modal#showModal">
+    <%= cl_image_tag(message.user.photo.key, :transformation=>[
+      {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+      {:radius=>"max"},
+      {:width=>200, :crop=>"scale"}
+    ])%>
+  </div>
+  <p><%= message.content %></p>
 </div>
 <div class="modal-container none"  data-modal-target="modal">
   <div class="modal">
@@ -20,13 +20,13 @@
       <%= cl_image_tag( message.user.photo.key, :width => 150, :crop => "pad") %>
       <div>
         <p class="bold"><%= message.user.first_name %> <%= message.user.last_name %></p>
-        <%  age = Date.today.year - current_user.birthday.year %>
-        <% age -= 1 if Date.today < current_user.birthday + age.years %>
+        <%  age = Date.today.year - message.user.birthday.year %>
+        <% age -= 1 if Date.today < message.user.birthday + age.years %>
         <p><%= age %></p>
       </div>
     </div>
     <div class="infos" >
-      <%  since = current_user.created_at %>
+      <%  since = message.user.created_at %>
       <p>Membre depuis <%= since %> jours</p>
       <%= message.user.description %>
     </div>
