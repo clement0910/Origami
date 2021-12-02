@@ -16,19 +16,19 @@
     <% end %>
 
     <div class="calculating--cards hidden">
-      <%= image_tag('party_4.gif', width: '400px', class: 'party--gif2') %>
+      <%= image_tag('party_4.gif', width: '600px', class: 'party--gif2') %>
       <div class="calculating hidden">
         <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
         <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
-        <div class="col-3">
-          <div class="snippet" data-title=".dot-windmill">
-            <div class="stage">
-              <div class="dot-windmill">
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+        <div class="calculating3">
+          <div class="spotify--button">
+            <h3>En attendant, vous pouvez vous connecter à Spotify !</h3>
+            <div class="real--button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
+            Log In Spotify</div>
+        </div>
+    </div>
     </div>
     <% if current_user.chatroom != nil %>
     <div class="calculating--cards2 hidden">
