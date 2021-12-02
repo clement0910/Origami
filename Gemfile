@@ -42,6 +42,7 @@ gem 'active_storage_validations'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'simple_form_fancy_uploads'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

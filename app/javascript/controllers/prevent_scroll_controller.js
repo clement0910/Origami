@@ -6,6 +6,5 @@ export default class extends Controller {
 /*        document.addEventListener("touchmove", function (e) {
             e.preventDefault();
         }, {passive: false});*/
-        console.log("coucou");
     }
 }

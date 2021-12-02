@@ -15,6 +15,7 @@ class InitializeChatroom
   def put_users_in_chatroom(groups)
     chatroom = Chatroom.create!(name: "Groupe d'amis", rating: groups[:rating])
     @chatroom_id = chatroom.id
+    @chatroom = chatroom
     groups[:group].each do |user|
       user.update(chatroom_id: chatroom.id)
       user.update(in_group: true)
@@ -24,10 +25,10 @@ class InitializeChatroom
 
   def create_chat_bot(groups)
     file = File.open('app/assets/images/icons/apple-icon-180x180.png')
-    user = User.new(first_name: "Bot", last_name: "Origami", email: "realbot@bot.fr", password: "bot000", gender: "Homme", city: "Lyon", birthday: DateTime.new(2000,2,3,4,5,6), bot: true)
+    user = User.new(first_name: "Bot", last_name: "Origami", email: "realbot#{User.last.id + 1}@bot.fr", password: "bot000", gender: "Homme", city: "Lyon", birthday: DateTime.new(2000,2,3,4,5,6), bot: true)
     user.photo.attach(io: file, filename: 'Jeanro.png', content_type: 'image/png')
     user.chatroom_id = @chatroom_id
-    user.save
+    user.save!
     groups[:group] << user
   end
 
@@ -46,7 +47,6 @@ class InitializeChatroom
 
   def message_group
     array = []
-
     user_group = @groups[:group].reject { |group| group[:bot] == true }
     user_group.each { |user| array << user.first_name }
     "Hello, #{array[0...-1].join(', ')} et #{array[-1]}."
@@ -57,6 +57,10 @@ class InitializeChatroom
     message.chatroom_id = @chatroom_id
     message.user_id = find_bot.id
     message.save
+    ChatroomChannel.broadcast_to(
+      @chatroom,
+      ApplicationController.new.render_to_string(partial: "messages/message", locals: { message: message })
+    )
   end
 
   def find_bot

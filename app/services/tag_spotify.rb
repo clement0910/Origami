@@ -7,8 +7,7 @@ class TagSpotify
   def call
     return false unless check_all_connect
 
-    tag_artists = common_artists
-    { artists: tag_artists }
+    common_artists
   end
 
   def check_all_connect
@@ -16,19 +15,11 @@ class TagSpotify
     true
   end
 
-  # def common_genres
-  #   @groups.each do |user|
-  #     user.genres
-  #   end
-  # end
-  #
   def common_artists
     array = []
-    @artists.each do |artist|
-      bool = true
-      @groups.each { |user| bool = false unless user.artists.pluck(:name).to_a.include? artist }
-      array << artist if bool == true
-    end
-    array.first(5)
+    @groups.map { |user| array << user.id }
+    result = []
+    @artists.each { |artist| result << artist if (array & artist.users.ids).size == 5 }
+    result.first(5)
   end
 end

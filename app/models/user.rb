@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :user_artists
   has_many :artists, through: :user_artists
+  has_many :genres, -> { distinct }, through: :artists
 
   validates :first_name, :last_name, :birthday, :gender, :city, presence: true
   validates :first_name, :last_name, format: { with: /\A[a-zA-Z\u00C0-\u00FF]*\z/, message: "Ce champ n'accepte que les lettres." }
@@ -16,7 +17,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, length: { minimum: 2, message: "Le champ est trop court." }
   validates :photo, attached: true, content_type: %i[png jpg jpeg]
   validates_date :birthday, before: lambda { 18.years.ago },
-                 before_message: "must be at least 18 years old"
+                            before_message: "must be at least 18 years old"
 
   before_save :update_name!
   CATEGORIES = ["Ruby", "JavaScript", "CSS"]
