@@ -37,6 +37,7 @@ body {
 .none {
   display: none;
 }
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
@@ -296,6 +297,7 @@ body {
   border-radius: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .users {

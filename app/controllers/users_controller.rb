@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     @user = current_user
     GetSpotifyData.new(@spotify_user, @user).call
-    redirect_to profile_path
+    redirect_to swiper_path
   end
 
   def in_group?
