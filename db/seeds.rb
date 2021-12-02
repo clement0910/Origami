@@ -4,10 +4,8 @@ Answer.destroy_all
 Question.destroy_all
 Theme.destroy_all
 Message.destroy_all
-Artist.destroy_all
-TopArtist.destroy_all
-Genre.destroy_all
-TopGenre.destroy_all
+ArtistGenre.destroy_all
+UserArtist.destroy_all
 User.destroy_all
 Chatroom.destroy_all
 
@@ -19,11 +17,6 @@ user.save
 file = File.open('app/assets/images/tom.jpg')
 user = User.new(first_name: "Tom", last_name: "Rosiere", email: "tom@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'tom.jpg', content_type: 'image/jpg')
-user.save
-
-file = File.open('app/assets/images/clement.jpg')
-user = User.new(first_name: "Clément", last_name: "Sapt", email: "clement@gmail.com", password: "admin00", gender: "Homme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
-user.photo.attach(io: file, filename: 'clement.jpg', content_type: 'image/jpg')
 user.save
 
 file = File.open('app/assets/images/gael.jpg')
