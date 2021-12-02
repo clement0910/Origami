@@ -346,5 +346,21 @@
     }
   }
 }
+.tags {
+  margin-top: 10px;
+}
 
-
+.tag {
+  background: #FFF;
+  border-radius: 12px;
+  color: #8993FE;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 8px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  font-family: "Quicksand Bold";
+}

@@ -32,6 +32,8 @@ import { initTinder } from "../plugins/card-swiper";
 import { preventScroll } from "../plugins/prevent_scroll";
 import { scroll } from "../plugins/init-message";
 import {initAutocomplete} from "../plugins/init_autocomplete";
+import {previewPhoto} from "../plugins/preview-photo";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
     preventScroll()
     scroll()
     initAutocomplete()
+    previewPhoto()
 });
