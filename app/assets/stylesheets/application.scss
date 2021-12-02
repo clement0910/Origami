@@ -66,6 +66,7 @@ body {
 
 .loaded.tinder {
   opacity: 1;
+  height: 92vh;
 }
 
 .tinder--status {
@@ -278,7 +279,7 @@ body {
   position: absolute;
   top: -10%;
   z-index: -3;
-  opacity: 50%;
+  opacity: 100%;
   transform: rotate(180deg);
 }
 
