@@ -9,7 +9,7 @@ UserArtist.destroy_all
 User.destroy_all
 Chatroom.destroy_all
 
-file = File.open('app/assets/images/icons/apple-icon-180x180.png')
+file = File.open('app/assets/images/logo_fond_violet_blancFichier 53-8.png')
 user = User.new(first_name: "Cassandra", last_name: "Nom", email: "bot@bot.fr", password: "bot000", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'Jeanro.png', content_type: 'image/png')
 user.save
@@ -24,7 +24,7 @@ user = User.new(first_name: "Gael", last_name: "Tardy", email: "gael@gmail.com",
 user.photo.attach(io: file, filename: 'gael.jpg', content_type: 'image/jpg')
 user.save
 
-file = File.open('app/assets/images/icons/apple-icon-180x180.png')
+file = File.open('app/assets/images/logo_fond_violet_blancFichier 53-8.png')
 user = User.new(first_name: "Cibylle", last_name: "Nom", email: "bot2@bot.fr", password: "bot000", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6))
 user.photo.attach(io: file, filename: 'Jeanro.png', content_type: 'image/png')
 user.save

@@ -26,13 +26,17 @@
 
       <ul class="dropdown__items">
 
-        <li><div class="bold">Score de groupe : <span style="color: #1CFFD5"><%= (@chatroom.rating * 100).to_i %>%</span></div></li>
-        <li>Vos intérêts communs:
-          <ul>
-            <li>Films</li>
-          </ul>
+        <li><p>Score de groupe : <span class="bold"><%= (@chatroom.rating * 100).to_i %></span>%</p></li>
+        <br>
+        <li>Vos artistes préférés:
+        <div class="tags">
+          <p class="tag">Alpha Wann</p>
+          <p class="tag">Khali</p>
+          <p class="tag">Swift Guad</p>
+          <p class="tag">Jazzy Bazz</p>
+          <p class="tag">Orselan</p>
+        </div>
         </li>
-        <li>Vos artists favoris: </li>
       </ul>
     </div>
 

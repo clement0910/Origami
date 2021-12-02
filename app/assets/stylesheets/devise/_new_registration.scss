@@ -21,6 +21,10 @@ div .input {
 }
 .input-registration:focus { outline:none; }
 
+.form-registration h2 {
+  margin-bottom: 5vh;
+}
+
 abbr { display:none; }
 
 select {
@@ -63,3 +67,40 @@ select {
 }
 
 .form-registration textarea:focus { outline:none; }
+
+
+.input-photo {
+  display: none;
+}
+
+#img-preview {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 8%;
+  object-fit: cover;
+}
+
+#preview {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#img-plus {
+  width: 30px;
+  background: white;
+  position: absolute;
+  right: 27%;
+  border-radius: 50%;
+  bottom: 45%;
+}
+
+#img-plus svg {
+   color: #5A5369;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
