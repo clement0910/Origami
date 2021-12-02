@@ -18,19 +18,21 @@
 
       <label class="dropdown__face" for="dropdown">
         <div class="dropdown__arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 points" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 points" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
           </svg>
         </div>
       </label>
 
       <ul class="dropdown__items">
 
-        <li>🙂</li>
-        <li>😺</li>
-        <li>😽</li>
-        <li>😎</li>
-        <li>🤗</li>
+        <li><div class="bold">Score de groupe : <span style="color: #1CFFD5"><%= (@chatroom.rating * 100).to_i %>%</span></div></li>
+        <li>Vos intérêts communs:
+          <ul>
+            <li>Films</li>
+          </ul>
+        </li>
+        <li>Vos artists favoris: </li>
       </ul>
     </div>
 

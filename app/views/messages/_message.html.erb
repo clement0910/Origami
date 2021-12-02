@@ -26,8 +26,8 @@
       </div>
     </div>
     <div class="infos" >
-      <%  since = current_user.created_at %>
-      <p>Membre depuis <%= since %> jours</p>
+      <%  since = current_user.created_at.strftime('%d/%m/%Y') %>
+      <p>Membre depuis le <%= since %></p>
       <%= message.user.description %>
     </div>
   </div>
