@@ -20,7 +20,7 @@ class User < ApplicationRecord
                             before_message: "must be at least 18 years old"
 
   before_save :update_name!
-
+  CATEGORIES = ["Ruby", "JavaScript", "CSS"]
   extend FriendlyId
   friendly_id :username, use: :slugged
 

@@ -8,7 +8,7 @@
   justify-content: center;
 }
 div .input {
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
 }
 .input-registration {
   font-size:18px;
@@ -52,3 +52,14 @@ select {
   top: 30px;
   left: 15px;
 }
+
+.form-registration textarea {
+  font-size:18px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+  margin: 0 auto;
+}
+
+.form-registration textarea:focus { outline:none; }

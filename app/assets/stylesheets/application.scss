@@ -37,6 +37,7 @@ body {
 .none {
   display: none;
 }
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
@@ -66,6 +67,7 @@ body {
 
 .loaded.tinder {
   opacity: 1;
+  height: 92vh;
 }
 
 .tinder--status {
@@ -103,7 +105,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
   z-index: 1;
 }
 
@@ -122,6 +124,7 @@ body {
   cursor: grab;
   color: rgb(255, 255, 255);
   top: 7.5em;
+  left: 5%;
 }
 
 .text--container {
@@ -129,13 +132,12 @@ body {
 }
 
 .calculating--cards {
-  flex-grow: 1;
   text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 1;
-  margin-bottom: 20em;
+  gap: 2em;
 }
 
 .moving.tinder--card {
@@ -174,9 +176,9 @@ body {
 
 .tinder--buttons {
   z-index: 3;
-  position: absolute;
+  position: fixed;
   transform: rotate(270deg);
-    top: 83.5%;
+    top: 84%;
     left: 22%;
     width: 120px;
     height: 120px;
@@ -185,9 +187,9 @@ body {
 
 .tinder--buttons2 {
   z-index: 3;
-  position: absolute;
+  position: fixed;
   transform: rotate(90deg);
-    top: 84%;
+    top: 83%;
     left: 77%;
     width: 120px;
     height: 120px;
@@ -236,22 +238,20 @@ body {
 }
 
 .calculating {
-  padding: 2.5em;
-  top: 32%;
+  padding: 0.5em;
   width: 70vw;
   max-width: 400px;
   color: rgb(20, 20, 20);
-  height: 35vh;
+  height: 25vh;
   background: rgb(255, 255, 255);
   border-radius: 8px;
   overflow: hidden;
-  z-index: 3;
   text-align: center;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
 
 .inner-text {
   margin-top: 1em;
+  font-size: x-large;
 }
 
 .inner-text2 {
@@ -278,8 +278,9 @@ body {
 
 .party--gif2 {
   position: absolute;
-  z-index: 10;
-  top: 0%;
+  top: -10%;
+  z-index: -3;
+  opacity: 100%;
   transform: rotate(180deg);
 }
 
@@ -291,12 +292,12 @@ body {
 .button--in {
   background: #8A93FF;
   padding: 0.8em 1.2em;
-  text-decoration: none;
   font-size: 1.2em;
   color: white;
   border-radius: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .users {
@@ -311,59 +312,43 @@ body {
   margin-bottom: 2em;
 }
 
-.dot-windmill {
-  position: absolute;
-  left: 48%;
-  top: 80%;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #FFA600;
-  color: #FFA600;
-  transform-origin: 5px 15px;
-  animation: dotWindmill 2s infinite linear;
-}
-
-.dot-windmill::before, .dot-windmill::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-}
-
-.dot-windmill::before {
-  left: -8.66px;
-  top: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #FFA600;
-  color: #FFA600;
-}
-.dot-windmill::after {
-  left: 8.66px;
-  top: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #FFA600;
-  color: #FFA600;
-}
-
-@keyframes dotWindmill {
-  0% {
-    transform: rotateZ(0deg) translate3d(0, 0, 0);
-  }
-  100% {
-    transform: rotateZ(720deg) translate3d(0, 0, 0);
-  }
-}
-
 .red {
   border: 1px solid red;
   border-radius: 10px;
 }
 
-.button--tripe--flex {
+.calculating3 {
   display: flex;
+  width: 70vw;
+  max-width: 400px;
+  color: rgb(20, 20, 20);
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.spotify--button {
+  display: flex;
+  color: black;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em 1em 1em 1em;
+}
+
+.real--button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.5em;
+  padding: 0.3em;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: #000000;
+  font-size: large;
+  font-weight: 700;
+  color: white;
+  gap: 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
 }
