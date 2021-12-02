@@ -320,9 +320,9 @@
   &__items {
     margin: 0;
     position: absolute;
-    right: 0;
+    right: 1rem;
     top: 50%;
-    width: 200px;
+    width: 250px;
     list-style: none;
     list-style-type: none;
     display: flex;
@@ -331,8 +331,8 @@
     z-index: -1;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
-
-
+    padding: 1rem;
+    text-align: center;
   }
 
   input {
@@ -345,4 +345,5 @@
     }
   }
 }
+
 
