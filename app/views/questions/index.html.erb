@@ -1,18 +1,18 @@
 <div class="tinder" data-user-id="<%= current_user.id %>" data-chatroom-id="<%= current_user.chatroom_id %>">
   <div class="tinder--cards">
-      <% @questions.last(@questions.count - @answers).each do |question| %>
-          <div class="tinder--card" id="<%= question.id %>">
-            <%= image_tag question.photo %>
-             <div class="text--container">
-              <h4> <%= question.content %></h4>
-             </div>
-          <div class="tinder--buttons">
-            <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
+    <% @questions.last(@questions.count - @answers).each do |question| %>
+      <div class="tinder--card" id="<%= question.id %>">
+        <%= image_tag question.photo %>
+          <div class="text--container">
+          <h4> <%= question.content %></h4>
           </div>
-          <div class="tinder--buttons2">
-            <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
-          </div>
+        <div class="tinder--buttons">
+          <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
         </div>
+        <div class="tinder--buttons2">
+          <%=  image_tag("arrow_final.gif", :style => 'width: 50px; height: 50px') %>
+        </div>
+      </div>
     <% end %>
 
     <div class="calculating--cards hidden">
@@ -24,12 +24,14 @@
         <div class="calculating3">
           <div class="spotify--button">
             <h3>En attendant, vous pouvez vous connecter à Spotify !</h3>
-            <div class="real--button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
-            Log In Spotify</div>
+            <%= link_to '/auth/spotify' do %>
+              <div class="real--button">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
+              Log In Spotify</div>
+            </div>
+            <% end %>
+          </div>
         </div>
-    </div>
-    </div>
     <% if current_user.chatroom != nil %>
     <div class="calculating--cards2 hidden">
       <%= image_tag("party_3.gif", :alt => "gif fete", class: 'party--gif2', :style => 'width: 400px; height: 400px') %>
