@@ -276,8 +276,9 @@ body {
 
 .party--gif2 {
   position: absolute;
+  top: -10%;
   z-index: -3;
-  top: 15%;
+  opacity: 50%;
   transform: rotate(180deg);
 }
 
