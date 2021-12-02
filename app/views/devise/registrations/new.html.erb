@@ -44,6 +44,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showPassword" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
+      <h2>Je m'appelle..</h2>
       <%= f.input  :first_name,
                    placeholder: 'Prénom',
                    label: '',
@@ -58,10 +59,10 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showName" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
+      <h2>Je suis..</h2>
       <%= f.input  :gender,
                    placeholder: 'Genre',
                    label: '',
-                   input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showGender', toggle_field_registration_target: "genderin"} },
                    collection: %w[Homme Femme Autre],
                    include_blank: 'Genre',
                    input_html: { class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showCity'} }%>
@@ -71,6 +72,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showGender" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
+      <h2>J'habite à</h2>
       <%= f.input  :city,
                    placeholder: 'Ville',
                    label: '',
@@ -86,13 +88,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showCity" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
+      <h2>Je suis né le </h2>
       <%= f.input :birthday,
                    # label: '',
                    # :as => :date, :start_year => Date.today.year - 90,
                    # :end_year => Date.today.year - 18,
                    # :order => [:day, :month, :year],
                   start_year: Date.today.year - 30,
-                   label: 'Date de naissance',
+                   label: false,
                     as: :date,
                     html5: true,
                    input_html: { autocomplete: 'bday', class: 'input-registration', data: { action: 'keyup->toggle-field-registration#showPhoto'}}%>
@@ -102,6 +105,11 @@
       <svg xmlns="http://www.w3.org/2000/svg" id="next" data-action="click->toggle-field-registration#showBirthday" class="h-6 w-6 arrow-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" arrow_left>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
+      <%= f.input  :description,
+                   as: :text,
+                   label: false,
+                   placeholder: 'Description',
+                   class: 'input-registration'%>
       <%= f.input  :photo, as: :file %>
       <div class="form-actions">
         <%= f.button :submit, "Terminer", class: 'btn btn-color', disabled: true,  id: 'submit', data: { :toggle_field_registration_target => "submit" }%>
