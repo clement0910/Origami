@@ -24,11 +24,18 @@
         <div class="calculating3">
           <div class="spotify--button">
             <h3>En attendant, vous pouvez vous connecter à Spotify !</h3>
-            <%= link_to '/auth/spotify', style: "text-decoration: none;" do %>
+            <% if current_user.connect_spotify == nil %>
+              <%= link_to '/auth/spotify', style: "text-decoration: none;" do %>
+                <div class="real--button">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
+                  Connecter Spotify</div>
+                </div>
+              <% end %>
+            <% else %>
               <div class="real--button">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
-              Log In Spotify</div>
-            </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
+                Spotify connecté</div>
+              </div>
             <% end %>
           </div>
         </div>
