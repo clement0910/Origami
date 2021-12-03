@@ -304,6 +304,7 @@
   position: relative;
   width: 30px;
   filter: url(#goo);
+  z-index: 500;
 
   &__face,
   &__items {
@@ -312,7 +313,6 @@
     display: flex;
     flex-direction: column;
     margin-right: 6px;
-    z-index: 500;
   }
 
   &__face {
