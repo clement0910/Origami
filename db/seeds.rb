@@ -24,9 +24,9 @@ user = User.new(first_name: "Gael", last_name: "Tardy", email: "gael@gmail.com",
 user.photo.attach(io: file, filename: 'gael.jpg', content_type: 'image/jpg')
 user.save
 
-file = File.open('app/assets/images/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f49505042514362573746443354673d3d2d3436343833323332382e313465306166363465646165653666393731303437313233353235332e6a7067.jpeg')
+file = File.open('app/assets/images/phoyott.jpeg')
 user = User.new(first_name: "Laura", last_name: "Cache", email: "laura@gmail.com", password: "bot000", gender: "Femme", city: "Lyon", birthday: DateTime.new(2001,2,3,4,5,6), description: "followez moi sur instagram: lewagon")
-user.photo.attach(io: file, filename: '68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f49505042514362573746443354673d3d2d3436343833323332382e313465306166363465646165653666393731303437313233353235332e6a7067.jpeg', content_type: 'image/jpeg')
+user.photo.attach(io: file, filename: 'phoyott.jpeg', content_type: 'image/jpeg')
 user.save
 
 Theme.create!(name: "Questions Algorithme")
