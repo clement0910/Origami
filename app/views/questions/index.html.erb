@@ -56,7 +56,7 @@
             <% end %>
           </div>
           <div class="img--container2">
-            <% current_user.chatroom.users.last(2).each do |user| %>
+            <% current_user.chatroom.users[4..-1].each do |user| %>
               <%= cl_image_tag(user.photo.key, :transformation=>[
                 {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
                 {:radius=>"max"},
