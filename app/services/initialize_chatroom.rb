@@ -8,8 +8,6 @@ class InitializeChatroom
     @common_answers = CommonInterest.new(@groups[:group]).call
     initialize_chat
     initialize_question
-    sleep 15
-    automate_sentence
   end
 
   private
@@ -42,8 +40,9 @@ class InitializeChatroom
   end
 
   def initialize_question
-    @question = random_botable_question
-    create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
+    # @question = random_botable_question
+    # create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
+    create_message(random_botable_question)
     #create gif
   end
 
@@ -77,7 +76,4 @@ class InitializeChatroom
     "Apparemment tout le monde aime les concerts ici 🧐 ! Cliquez sur le bouton info pour voir vos artistes en communs !"
   end
 
-  def automate_sentence
-    "J'ai remarqué qu'il y avait un concert de Josman dans moins d'1 mois, alors vous avez réussi à avoir vos places?"
-  end
 end
