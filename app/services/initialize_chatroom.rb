@@ -8,6 +8,8 @@ class InitializeChatroom
     @common_answers = CommonInterest.new(@groups[:group]).call
     initialize_chat
     initialize_question
+    sleep 15
+    automate_sentence
   end
 
   private
@@ -49,7 +51,7 @@ class InitializeChatroom
     array = []
     user_group = @groups[:group].reject { |group| group[:bot] == true }
     user_group.each { |user| array << user.first_name }
-    "Hello, #{array[0...-1].join(', ')} et #{array[-1]}."
+    "Hello #{array[0...-1].join(', ')} et #{array[-1]}."
   end
 
   def create_message(content_msg)
@@ -71,6 +73,11 @@ class InitializeChatroom
   def random_botable_question
     theme_id = Theme.find_by_name("Questions Bot").id
     #forget sample for presenration
-    @common_answers.filter { |a| a[:question].theme_id == theme_id }.sample
+    #@common_answers.filter { |a| a[:question].theme_id == theme_id }.sample
+    "Apparemment tout le monde aime les concerts ici 🧐 ! Cliquez sur le bouton info pour voir vos artistes en communs !"
+  end
+
+  def automate_sentence
+    "J'ai remarqué qu'il y avait un concert de Josman dans moins d'1 mois, alors vous avez réussi à avoir vos places?"
   end
 end
