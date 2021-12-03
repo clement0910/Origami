@@ -73,7 +73,7 @@ class InitializeChatroom
     theme_id = Theme.find_by_name("Questions Bot").id
     #forget sample for presenration
     #@common_answers.filter { |a| a[:question].theme_id == theme_id }.sample
-    "Apparemment tout le monde aime les concerts ici 🧐 ! Cliquez sur le bouton info pour voir vos artistes en communs !"
+    "Apparemment tout le monde aime les concerts ici 🧐 ! Il y en a surement un qui passe dans pas longtemps et qui pourrait tous vous interesser..."
   end
 
 end

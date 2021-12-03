@@ -21,24 +21,6 @@
         <%= image_tag('anim.gif', width: '150px', class: 'calculating--image') %>
         <h3 class="inner-text">Nous calculons les affinités avec vos futurs amis...</h3>
       </div>
-        <div class="calculating3">
-          <div class="spotify--button">
-            <h3>En attendant, vous pouvez vous connecter à Spotify !</h3>
-            <% if current_user.connect_spotify == nil %>
-              <%= link_to '/auth/spotify', style: "text-decoration: none;" do %>
-                <div class="real--button">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
-                  Connecter Spotify</div>
-                </div>
-              <% end %>
-            <% else %>
-              <div class="real--button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/800px-Spotify_logo_without_text.svg.png" alt="spotify logo" width="35px">
-                Spotify connecté</div>
-              </div>
-            <% end %>
-          </div>
-        </div>
     <div class="calculating--cards2 <%= 'hidden' unless current_user.in_group %>">
       <%= image_tag("party_3.gif", :alt => "gif fete", class: 'party--gif2', :style => 'width: 400px; height: 400px') %>
       <div class="calculating2 hidden">
