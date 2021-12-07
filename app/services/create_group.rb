@@ -19,7 +19,6 @@ class CreateGroup
   end
 
   def transform_group_in_rating(two_users_groups, users_group, groups)
-    # don't forget homme/femme
     if two_users_groups.count == 10 && (two_users_groups.sum / two_users_groups.count) > 0.7
       groups << { rating: (two_users_groups.sum / two_users_groups.count), group: users_group }
     end

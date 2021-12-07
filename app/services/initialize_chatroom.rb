@@ -40,10 +40,8 @@ class InitializeChatroom
   end
 
   def initialize_question
-    # @question = random_botable_question
-    # create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
-    create_message(random_botable_question)
-    #create gif
+    @question = random_botable_question
+    create_message(@question[:bool] ? @question[:question].sentence_bot.true : @question[:question].sentence_bot.false)
   end
 
   def message_group
@@ -71,9 +69,7 @@ class InitializeChatroom
 
   def random_botable_question
     theme_id = Theme.find_by_name("Questions Bot").id
-    #forget sample for presenration
-    #@common_answers.filter { |a| a[:question].theme_id == theme_id }.sample
-    "Apparemment tout le monde aime les concerts ici 🧐 ! Il y en a surement un qui passe dans pas longtemps et qui pourrait tous vous interesser..."
+    @common_answers.filter { |a| a[:question].theme_id == theme_id }.sample
   end
 
 end
