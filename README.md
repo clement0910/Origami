@@ -85,6 +85,7 @@ You can try our app online with an Progressive Web Application.
 - Match algorithm according to people's preferences
 - Swipe using HammerJS
 - Bot response according to people's preferences
+- Setup SideKiq
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
