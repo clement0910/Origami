@@ -77,7 +77,6 @@ You can try our app online with an Progressive Web Application.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ROADMAP -->
 ## Specificities
 
 - Get Spotify data with Spotify API
@@ -89,12 +88,6 @@ You can try our app online with an Progressive Web Application.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- LICENSE -->
-## Design
-
-All design was made by [Nicolas Mercier](https://github.com/85dev)
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
