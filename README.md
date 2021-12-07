@@ -19,7 +19,7 @@
     ·
     <a href="https://github.com/85dev">Nicolas Mercier</a>
     ·
-    <a href="https://github.com/knaare">Tom Rosière</a>
+    <a href="https://github.com/knnare">Tom Rosière</a>
   </p>
 </div>
 
